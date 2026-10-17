@@ -93,15 +93,7 @@
   document.addEventListener("click", function (event) {
     var target = event.target;
     var toggle = target && target.closest ? target.closest("#menuToggle") : null;
-    if (toggle) {
-      var menu = getMenu();
-      if (!menu) return;
-      event.preventDefault();
-      event.stopPropagation();
-      if (menu.classList.contains("active")) closeMenu();
-      else { ensureCloseButton(); openMenu(); }
-      return;
-    }
+    if (toggle) return; // The button has its own direct click handler.
     var menu = getMenu();
     var link = target && target.closest ? target.closest("#mobileMenu a") : null;
     if (link) {
@@ -119,7 +111,24 @@
     if (window.innerWidth > 900) closeMenu();
   });
 
-  function init() { installStyles(); ensureCloseButton(); }
+  function ensureToggleHandler() {
+    var toggle = getToggle();
+    if (!toggle || toggle.getAttribute("data-shared-nav-bound") === "true") return;
+    toggle.setAttribute("data-shared-nav-bound", "true");
+    toggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var menu = getMenu();
+      if (!menu) return;
+      if (menu.classList.contains("active")) closeMenu();
+      else { ensureCloseButton(); openMenu(); }
+    });
+    toggle.addEventListener("touchend", function (event) {
+      // Native click handles taps; prevent duplicate toggles on touch browsers.
+    }, { passive: true });
+  }
+
+  function init() { installStyles(); ensureCloseButton(); ensureToggleHandler(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 
