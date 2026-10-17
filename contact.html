@@ -2306,9 +2306,9 @@ a website, more visibility, better campaigns or more leads,
 we can start with a simple conversation.
 </p>
 
-<a href="contact.html" class="cta-button">
+<button type="button" class="cta-button" id="openContactModal" aria-haspopup="dialog" aria-controls="contactOptionsModal">
 Let's Talk →
-</a>
+</button>
 
 </div>
 
@@ -2498,6 +2498,27 @@ document
     }
 }
 
+
+/* LET'S TALK CONTACT OPTIONS — this page only */
+#contactOptionsModal[hidden]{display:none!important}
+#contactOptionsModal{position:fixed;inset:0;z-index:3000;display:flex;align-items:center;justify-content:center;padding:22px;background:rgba(8,11,18,.68);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px)}
+#contactOptionsModal .contact-modal-panel{position:relative;width:min(100%,540px);max-height:min(88vh,760px);overflow:auto;background:#fff;color:#10131a;border:1px solid rgba(124,58,237,.16);border-radius:26px;padding:clamp(24px,5vw,42px);box-shadow:0 30px 100px rgba(0,0,0,.28)}
+#contactOptionsModal .contact-modal-kicker{font:500 11px/1.4 "DM Mono",monospace;letter-spacing:.17em;text-transform:uppercase;color:#7c3aed;margin-bottom:12px}
+#contactOptionsModal h2{font-size:clamp(27px,5vw,38px);line-height:1.05;letter-spacing:-.055em;margin:0 42px 10px 0;color:#10131a}
+#contactOptionsModal .contact-modal-copy{font-size:14px;line-height:1.7;color:#596477;margin-bottom:24px}
+#contactOptionsModal .contact-modal-close{position:absolute;right:18px;top:18px;width:40px;height:40px;border:0;border-radius:50%;background:#f1eef8;color:#17151f;font-size:25px;line-height:1;cursor:pointer}
+#contactOptionsModal .contact-option-list{display:grid;gap:10px}
+#contactOptionsModal .contact-option{display:flex;align-items:center;gap:14px;min-height:66px;padding:14px 16px;border:1px solid #e7e4ee;border-radius:15px;background:#fff;color:#15131c;text-decoration:none;transition:transform .2s,border-color .2s,background .2s}
+#contactOptionsModal .contact-option:hover{transform:translateY(-2px);border-color:#7c3aed;background:#faf8ff}
+#contactOptionsModal .contact-option-icon{display:grid;place-items:center;flex:0 0 40px;height:40px;border-radius:12px;background:#f0eaff;color:#6428c7;font-size:18px;font-weight:800}
+#contactOptionsModal .contact-option strong{display:block;font-size:14px;font-weight:800}
+#contactOptionsModal .contact-option small{display:block;margin-top:3px;color:#667085;font-size:12px;overflow-wrap:anywhere}
+#contactOptionsModal .contact-development{display:flex;justify-content:center;align-items:center;gap:10px;width:100%;margin-top:16px;min-height:54px;padding:13px 18px;border:0;border-radius:100px;background:#7c3aed;color:#fff;font:800 13px/1.4 "Manrope",sans-serif;text-align:center;cursor:pointer;transition:background .2s,transform .2s}
+#contactOptionsModal .contact-development:hover{background:#6428c7;transform:translateY(-2px)}
+#contactOptionsModal .contact-modal-note{margin-top:13px;font-size:11px;line-height:1.6;color:#70798a;text-align:center}
+body.contact-modal-open{overflow:hidden}
+@media(max-width:520px){#contactOptionsModal{padding:14px}#contactOptionsModal .contact-modal-panel{border-radius:21px;padding:25px 19px}#contactOptionsModal .contact-option{padding:12px}#contactOptionsModal .contact-option-icon{flex-basis:36px;height:36px}}
+
 </style>
 <script id="current-page-nav-fix-script">
 (function(){
@@ -2522,6 +2543,73 @@ document
   if(document.body){
     new MutationObserver(function(){applyCurrentPage();}).observe(document.body,{childList:true,subtree:true});
   }
+})();
+</script>
+
+
+<!-- Let's Talk contact popup: scoped to contact.html only -->
+<div id="contactOptionsModal" hidden>
+  <section class="contact-modal-panel" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" aria-describedby="contactModalDescription" tabindex="-1">
+    <button type="button" class="contact-modal-close" id="closeContactModal" aria-label="Close contact options">×</button>
+    <div class="contact-modal-kicker">LET'S TALK</div>
+    <h2 id="contactModalTitle">How would you like to connect?</h2>
+    <p class="contact-modal-copy" id="contactModalDescription">Choose a direct contact option, or send us your website development enquiry on WhatsApp.</p>
+    <div class="contact-option-list">
+      <a class="contact-option" href="tel:+919267967187">
+        <span class="contact-option-icon" aria-hidden="true">☎</span>
+        <span><strong>Call us</strong><small>+91 92679 67187</small></span>
+      </a>
+      <a class="contact-option" href="https://wa.me/919112573020" target="_blank" rel="noopener noreferrer">
+        <span class="contact-option-icon" aria-hidden="true">↗</span>
+        <span><strong>WhatsApp</strong><small>+91 91125 73020</small></span>
+      </a>
+      <a class="contact-option" href="mailto:itsshailesh0414@gmail.com">
+        <span class="contact-option-icon" aria-hidden="true">@</span>
+        <span><strong>Email us</strong><small>itsshailesh0414@gmail.com</small></span>
+      </a>
+    </div>
+    <button type="button" class="contact-development" id="developmentEnquiryButton">Send a Website / Development Enquiry on WhatsApp <span aria-hidden="true">↗</span></button>
+    <p class="contact-modal-note">WhatsApp opens with a prepared enquiry message. Review it and press Send in WhatsApp.</p>
+  </section>
+</div>
+<script id="lets-talk-contact-modal-script">
+(function(){
+  var modal=document.getElementById('contactOptionsModal');
+  var openButton=document.getElementById('openContactModal');
+  var closeButton=document.getElementById('closeContactModal');
+  var panel=modal&&modal.querySelector('.contact-modal-panel');
+  var developmentButton=document.getElementById('developmentEnquiryButton');
+  if(!modal||!openButton||!closeButton||!panel||!developmentButton)return;
+  var previousFocus=null;
+  function openModal(){
+    previousFocus=document.activeElement;
+    modal.hidden=false;
+    document.body.classList.add('contact-modal-open');
+    closeButton.focus();
+  }
+  function closeModal(){
+    modal.hidden=true;
+    document.body.classList.remove('contact-modal-open');
+    if(previousFocus&&typeof previousFocus.focus==='function')previousFocus.focus();
+  }
+  openButton.addEventListener('click',openModal);
+  closeButton.addEventListener('click',closeModal);
+  modal.addEventListener('click',function(event){if(event.target===modal)closeModal();});
+  document.addEventListener('keydown',function(event){
+    if(modal.hidden)return;
+    if(event.key==='Escape'){closeModal();return;}
+    if(event.key==='Tab'){
+      var items=Array.prototype.slice.call(panel.querySelectorAll('a[href],button:not([disabled])'));
+      if(!items.length)return;
+      var first=items[0],last=items[items.length-1];
+      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+    }
+  });
+  developmentButton.addEventListener('click',function(){
+    var message="Hi AK × ST Advertising, I’d like to enquire about website development. Please contact me to discuss my project requirements, scope and pricing.";
+    window.open('https://wa.me/919112573020?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');
+  });
 })();
 </script>
 
