@@ -1832,6 +1832,7 @@ Let's Talk →
                     presentation that makes the brand feel
                     professional.
                 </p>
+                <a class="intro-read-link" href="website-projects.html" aria-label="Read more about website design">Read <span aria-hidden="true">→</span></a>
 
             </div>
 
@@ -1852,6 +1853,7 @@ Let's Talk →
                     structure around the actual business
                     requirement.
                 </p>
+                <a class="intro-read-link" href="website-projects.html" aria-label="Read more about website development">Read <span aria-hidden="true">→</span></a>
 
             </div>
 
@@ -2844,7 +2846,38 @@ document
     color: #17151f !important;
 }
 .intro-strip .intro-box h3 {
-    color: #17151f !important;
+    color: #ed343b !important;
+}
+.intro-strip .intro-box .intro-read-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 14px;
+    color: #ed343b;
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity .25s ease, transform .25s ease, color .25s ease;
+}
+.intro-strip .intro-box:hover .intro-read-link,
+.intro-strip .intro-box:focus-within .intro-read-link {
+    opacity: 1;
+    transform: translateY(0);
+}
+.intro-strip .intro-box:hover h3 {
+    color: #ffffff !important;
+}
+.intro-strip .intro-box:hover .intro-read-link,
+.intro-strip .intro-box:focus-within .intro-read-link {
+    color: #ffffff;
+}
+.intro-strip .intro-box .intro-read-link span {
+    transition: transform .25s ease;
+}
+.intro-strip .intro-box .intro-read-link:hover span {
+    transform: translateX(3px);
 }
 .intro-strip .intro-box p {
     color: #465164 !important;
