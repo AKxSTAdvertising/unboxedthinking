@@ -2531,5 +2531,31 @@ window.addEventListener("resize",()=>{
 
 <script src="site-nav.js?v=20261017-shared-nav-v1"></script>
 <script src="unboxed-motion.js"></script>
+
+<!-- current-page-nav-fix -->
+<style id="current-page-nav-fix">
+.nav-links a.is-current-page:not(.nav-cta)::after{width:100%!important;background:#ed343b!important}
+.nav-links a.nav-cta.is-current-page{position:relative}
+.nav-links a.nav-cta.is-current-page::after{content:"";position:absolute;left:0;bottom:-7px;width:100%;height:2px;background:#ed343b}
+.mobile-links a.is-current-page:not(.mobile-cta){color:#ed343b!important;border-bottom-color:#ed343b!important;text-decoration:underline;text-decoration-color:#ed343b;text-decoration-thickness:2px;text-underline-offset:7px}
+.mobile-links a.mobile-cta.is-current-page{box-shadow:inset 0 -2px 0 #fff}
+</style>
+<script id="current-page-nav-fix-script">
+(function(){
+  var current=(window.location.pathname.split('/').pop()||'index.html').toLowerCase();
+  var aliases={'website-projects.html':'web-development.html','landing-page-projects.html':'web-development.html'};
+  var active=aliases[current]||current;
+  document.querySelectorAll('.nav-links a[href],.mobile-links a[href]').forEach(function(link){
+    try{
+      var target=(new URL(link.getAttribute('href'),window.location.href).pathname.split('/').pop()||'index.html').toLowerCase();
+      if(target===active){
+        link.classList.add('is-current-page');
+        link.setAttribute('aria-current','page');
+      }
+    }catch(e){}
+  });
+})();
+</script>
+
 </body>
 </html>
