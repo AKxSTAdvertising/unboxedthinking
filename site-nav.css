@@ -385,3 +385,10 @@ body.menu-open{overflow:hidden!important}
   .mobile-menu{padding-top:60px!important}
   .mobile-menu-inner{margin:0 auto!important}
 }
+
+/* Keep the hamburger above the open overlay so it can close the menu. */
+@media(max-width:900px){
+  .nav{z-index:11001!important}
+  .menu-toggle{position:relative!important;z-index:11002!important;pointer-events:auto!important}
+  .mobile-menu{z-index:11000!important}
+}
