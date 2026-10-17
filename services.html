@@ -1457,6 +1457,7 @@ footer{
 </style>
 <link rel="stylesheet" href="unboxed-theme.css">
   <link rel="stylesheet" href="unboxed-theme.css?v=20261017-theme-fix">
+<link rel="stylesheet" href="site-nav.css?v=20261017-shared-nav-v1">
 </head>
 
 
@@ -1495,12 +1496,13 @@ Let's Talk
 </nav>
 
 
+<!-- MOBILE HAMBURGER -->
+
 <button
-class="menu-toggle"
-id="menuToggle"
-aria-label="Open menu"
-aria-expanded="false"
-type="button"
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Open menu"
+    aria-expanded="false"
 >
 
 <span></span>
@@ -1513,17 +1515,18 @@ type="button"
 </header>
 
 
-<!-- =========================================================
+<!-- =====================================================
      MOBILE MENU
-========================================================= -->
+===================================================== -->
 
 <div class="mobile-menu" id="mobileMenu">
 
-<div class="mobile-menu-panel">
+<div class="mobile-menu-inner">
 
 <div class="mobile-menu-label">
 Unboxed Thinking / MENU
 </div>
+
 
 <nav class="mobile-links">
 
@@ -1550,17 +1553,6 @@ Let's Talk →
 </a>
 
 </nav>
-
-
-<div class="mobile-menu-footer">
-
-Digital Marketing · Web Development · SEO · Paid Ads
-
-<br><br>
-
-© 2026 Unboxed Thinking
-
-</div>
 
 </div>
 
@@ -2374,109 +2366,6 @@ window.addEventListener("scroll",()=>{
 
 
 /* =========================================================
-   MOBILE MENU
-========================================================= */
-
-const menuToggle = document.getElementById("menuToggle");
-const mobileMenu = document.getElementById("mobileMenu");
-
-function openMenu(){
-
-    menuToggle.classList.add("active");
-
-    mobileMenu.classList.add("open");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        "true"
-    );
-
-    menuToggle.setAttribute(
-        "aria-label",
-        "Close menu"
-    );
-
-    document.body.classList.add("menu-open");
-}
-
-
-function closeMenu(){
-
-    menuToggle.classList.remove("active");
-
-    mobileMenu.classList.remove("open");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
-    menuToggle.setAttribute(
-        "aria-label",
-        "Open menu"
-    );
-
-    document.body.classList.remove("menu-open");
-}
-
-
-menuToggle.addEventListener("click",()=>{
-
-    if(mobileMenu.classList.contains("open")){
-
-        closeMenu();
-
-    }else{
-
-        openMenu();
-
-    }
-
-});
-
-
-/* CLOSE WHEN CLICKING OUTSIDE PANEL */
-
-mobileMenu.addEventListener("click",(event)=>{
-
-    if(event.target === mobileMenu){
-
-        closeMenu();
-
-    }
-
-});
-
-
-/* CLOSE AFTER CLICKING LINK */
-
-document
-.querySelectorAll(".mobile-links a")
-.forEach(link=>{
-
-    link.addEventListener("click",()=>{
-
-        closeMenu();
-
-    });
-
-});
-
-
-/* ESC KEY */
-
-document.addEventListener("keydown",(event)=>{
-
-    if(event.key === "Escape"){
-
-        closeMenu();
-
-    }
-
-});
-
-
-/* =========================================================
    SCROLL REVEAL
 ========================================================= */
 
@@ -2558,6 +2447,7 @@ window.addEventListener("resize",()=>{
 
 </script>
 
+<script src="site-nav.js?v=20261017-shared-nav-v1"></script>
 <script src="unboxed-motion.js"></script>
 </body>
 </html>
