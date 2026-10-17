@@ -74,6 +74,7 @@ body.modal-open{overflow:hidden}
 .domain-option{display:flex;align-items:center;gap:11px;padding:13px;border:1px solid rgba(255,255,255,.15);background:#171717;color:#eee;font-size:12px;cursor:pointer}
 .domain-option:has(input:checked){border-color:var(--collection-red);background:rgba(237,52,59,.07)}
 .domain-option input{accent-color:var(--collection-red)}
+.type-field{display:block;margin:0 0 17px}.type-field span{display:block;margin-bottom:7px;color:#aaa;font-size:11px}.type-field select{width:100%;height:44px;padding:0 12px;border:1px solid rgba(255,255,255,.18);background:#080808;color:#fff;outline:0;font-size:13px}.type-field select:focus{border-color:var(--collection-red)}
 .domain-field{display:block;margin:0 0 17px}
 .domain-field span{display:block;margin-bottom:7px;color:#aaa;font-size:11px}
 .domain-field input{width:100%;height:44px;padding:0 12px;border:1px solid rgba(255,255,255,.18);background:#080808;color:#fff;outline:0;font-size:13px}
@@ -111,7 +112,7 @@ body.modal-open{overflow:hidden}
     <div class="collection-topline reveal"><span class="collection-kicker">WEBSITE COLLECTION</span><span class="collection-count">08 CATEGORIES</span></div>
     <div class="collection-heading reveal">
       <h1>Every business needs a different kind of website.</h1>
-      <p>Explore the type that fits your business. Open a live project where we have one, or tell us what you need and we'll help you build it.</p>
+      <p>Choose the website type that fits your business, then send a quick enquiry. We’ll help you plan the right website for your needs.</p>
     </div>
     <label class="collection-search reveal">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.6"/><path d="m16 16 4.2 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -120,39 +121,39 @@ body.modal-open{overflow:hidden}
     <div class="collection-grid" id="collectionGrid">
       <article class="collection-card reveal" data-search="corporate business company professional services fortune advertising">
         <div class="collection-image"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=85" alt="Modern corporate office building" loading="lazy"><span class="collection-index">CORPORATE</span><span class="collection-image-label">Business presence</span></div>
-        <div class="collection-body"><div class="collection-type">Business / Corporate</div><h2>Business Websites</h2><p>Professional websites that present your company, services and credibility clearly.</p><a class="collection-action" href="https://fortuneadvertising.in/" target="_blank" rel="noopener noreferrer">Open live website ↗</a><div class="collection-extra-links"><a href="https://tophumanresource.com/" target="_blank" rel="noopener noreferrer">Top Human Resource ↗</a><a href="https://excelitsolution.com/" target="_blank" rel="noopener noreferrer">Excel IT Solution ↗</a></div></div>
+        <div class="collection-body"><div class="collection-type">Business / Corporate</div><h2>Business Websites</h2><p>Professional websites that present your company, services and credibility clearly.</p><button class="collection-action" type="button" data-enquire="Business Websites">Enquire about this ↗</button></div>
       </article>
       <article class="collection-card reveal" data-search="ecommerce commerce online store shop product shopping anup gupta studio">
         <div class="collection-image"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=85" alt="Online shopping and e-commerce payment" loading="lazy"><span class="collection-index">COMMERCE</span><span class="collection-image-label">Products to customers</span></div>
-        <div class="collection-body"><div class="collection-type">E-commerce</div><h2>E-commerce</h2><p>Online stores with organised products, clear categories and a smoother shopping journey.</p><a class="collection-action" href="https://anupguptastudio.com/" target="_blank" rel="noopener noreferrer">Open live website ↗</a></div>
+        <div class="collection-body"><div class="collection-type">E-commerce</div><h2>E-commerce</h2><p>Online stores with organised products, clear categories and a smoother shopping journey.</p><button class="collection-action" type="button" data-enquire="E-commerce">Enquire about this ↗</button></div>
       </article>
       <article class="collection-card reveal" data-search="property real estate builder homes apartments property listing">
         <div class="collection-image"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Premium residential property interior" loading="lazy"><span class="collection-index">PROPERTY</span><span class="collection-image-label">Property experiences</span></div>
-        <div class="collection-body"><div class="collection-type">Property</div><h2>Real Estate Websites</h2><p>Property showcases, project pages and enquiry journeys for builders and agents.</p><button class="collection-action" type="button" data-enquire="Real Estate Website">Enquire about this ↗</button></div>
+        <div class="collection-body"><div class="collection-type">Property</div><h2>Real Estate Websites</h2><p>Property showcases, project pages and enquiry journeys for builders and agents.</p><button class="collection-action" type="button" data-enquire="Real Estate Websites">Enquire about this ↗</button></div>
       </article>
       <article class="collection-card reveal" data-search="creative portfolio agency personal brand studio avnor cplx">
         <div class="collection-image"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=85" alt="Digital creative workspace and analytics screen" loading="lazy"><span class="collection-index">CREATIVE</span><span class="collection-image-label">Brand and portfolio</span></div>
-        <div class="collection-body"><div class="collection-type">Creative</div><h2>Portfolio & Agency</h2><p>Distinctive digital homes for agencies, creators and personal brands.</p><a class="collection-action" href="https://avnor.media/" target="_blank" rel="noopener noreferrer">Open live website ↗</a><div class="collection-extra-links"><a href="https://cplx.media/" target="_blank" rel="noopener noreferrer">CPLX Media ↗</a></div></div>
+        <div class="collection-body"><div class="collection-type">Creative</div><h2>Portfolio & Agency</h2><p>Distinctive digital homes for agencies, creators and personal brands.</p><button class="collection-action" type="button" data-enquire="Portfolio & Agency">Enquire about this ↗</button></div>
       </article>
       <article class="collection-card reveal" data-search="hospitality hotel restaurant resort cafe booking">
         <div class="collection-image"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=85" alt="Restaurant hospitality interior" loading="lazy"><span class="collection-index">HOSPITALITY</span><span class="collection-image-label">Guest experience</span></div>
-        <div class="collection-body"><div class="collection-type">Hospitality</div><h2>Hospitality Websites</h2><p>Restaurant, hotel and resort websites built around menus, bookings and guest enquiries.</p><button class="collection-action" type="button" data-enquire="Hospitality Website">Enquire about this ↗</button></div>
+        <div class="collection-body"><div class="collection-type">Hospitality</div><h2>Hospitality Websites</h2><p>Restaurant, hotel and resort websites built around menus, bookings and guest enquiries.</p><button class="collection-action" type="button" data-enquire="Hospitality Websites">Enquire about this ↗</button></div>
       </article>
       <article class="collection-card reveal" data-search="saas software web application platform dashboard online tool">
         <div class="collection-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85" alt="Software dashboard and analytics interface" loading="lazy"><span class="collection-index">SAAS</span><span class="collection-image-label">Digital products</span></div>
-        <div class="collection-body"><div class="collection-type">Software / Platform</div><h2>SaaS & Web Apps</h2><p>Web-based tools, platforms and dashboards shaped around real user workflows.</p><button class="collection-action" type="button" data-enquire="SaaS or Web Application">Enquire about this ↗</button></div>
+        <div class="collection-body"><div class="collection-type">Software / Platform</div><h2>SaaS & Web Apps</h2><p>Web-based tools, platforms and dashboards shaped around real user workflows.</p><button class="collection-action" type="button" data-enquire="SaaS & Web Apps">Enquire about this ↗</button></div>
       </article>
       <article class="collection-card reveal" data-search="education coaching school institute learning courses training">
         <div class="collection-image"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=85" alt="Students walking across a university campus" loading="lazy"><span class="collection-index">EDUCATION</span><span class="collection-image-label">Learning online</span></div>
-        <div class="collection-body"><div class="collection-type">Education</div><h2>Education & Coaching</h2><p>Course, institute and coaching websites that make programmes easy to explore.</p><button class="collection-action" type="button" data-enquire="Education or Coaching Website">Enquire about this ↗</button></div>
+        <div class="collection-body"><div class="collection-type">Education</div><h2>Education & Coaching</h2><p>Course, institute and coaching websites that make programmes easy to explore.</p><button class="collection-action" type="button" data-enquire="Education & Coaching">Enquire about this ↗</button></div>
       </article>
       <article class="collection-card reveal" data-search="healthcare clinic hospital doctor medical service consultant">
         <div class="collection-image"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85" alt="Healthcare professional working in a clinical environment" loading="lazy"><span class="collection-index">HEALTHCARE</span><span class="collection-image-label">Trust and service</span></div>
-        <div class="collection-body"><div class="collection-type">Healthcare / Services</div><h2>Healthcare & Service</h2><p>Trust-building websites for clinics, consultants and professional service providers.</p><button class="collection-action" type="button" data-enquire="Healthcare or Service Website">Enquire about this ↗</button></div>
+        <div class="collection-body"><div class="collection-type">Healthcare / Services</div><h2>Healthcare & Service</h2><p>Trust-building websites for clinics, consultants and professional service providers.</p><button class="collection-action" type="button" data-enquire="Healthcare & Service">Enquire about this ↗</button></div>
       </article>
       <div class="collection-empty" id="emptyState">No matching categories. Try another search, or contact us about a custom website.</div>
     </div>
-    <div class="collection-note reveal">Have a different requirement? Choose the closest category or enquire about a custom website.</div>
+    <div class="collection-note reveal">Choose a website type on any card to open the enquiry form, or select a custom website if you’re not sure.</div>
   </div>
 </main>
 <footer class="collection-footer"><div class="container"><strong>UNBOXED THINKING.</strong><span>Web Development · Digital Marketing · SEO · Paid Ads</span><span>© 2026</span></div></footer>
@@ -162,6 +163,7 @@ body.modal-open{overflow:hidden}
     <div class="inquiry-kicker">Project enquiry / Website</div>
     <h2 id="inquiryTitle">Let's talk about your website.</h2>
     <p id="inquiryDescription">Tell us whether you already have a domain. We'll prepare your enquiry on WhatsApp.</p>
+    <label class="type-field" for="websiteType"><span>Which website do you need?</span><select id="websiteType" name="websiteType" required><option value="Business Websites" selected>Business Websites</option><option value="E-commerce">E-commerce</option><option value="Real Estate Websites">Real Estate Websites</option><option value="Portfolio & Agency">Portfolio & Agency</option><option value="Hospitality Websites">Hospitality Websites</option><option value="SaaS & Web Apps">SaaS & Web Apps</option><option value="Education & Coaching">Education & Coaching</option><option value="Healthcare & Service">Healthcare & Service</option><option value="Custom Website / Not Sure">Custom Website / Not Sure</option></select></label>
     <div class="domain-options">
       <label class="domain-option"><input type="radio" name="domainChoice" value="have" checked> I already have a domain</label>
       <label class="domain-option"><input type="radio" name="domainChoice" value="need"> I need a new domain</label>
@@ -178,10 +180,13 @@ body.modal-open{overflow:hidden}
   const form=document.getElementById('inquiryForm');
   const domainInput=document.getElementById('domainInput');
   const domainField=document.getElementById('domainField');
+  const websiteType=document.getElementById('websiteType');
   let selectedCategory='Website';
   const closeButton=document.getElementById('closeInquiry');
   function openModal(category){
     selectedCategory=category;
+    websiteType.value=category;
+    if(!websiteType.value){websiteType.value=websiteType.options[0].value;selectedCategory=websiteType.value;}
     document.getElementById('inquiryTitle').textContent='Let’s build your '+category.toLowerCase()+'.';
     document.getElementById('inquiryDescription').textContent='Tell us whether you already have a domain. We’ll prepare your enquiry on WhatsApp.';
     modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.classList.add('modal-open');
@@ -196,6 +201,7 @@ body.modal-open{overflow:hidden}
     if(!hasDomain)domainInput.value='';
   }
   document.querySelectorAll('[data-enquire]').forEach(button=>button.addEventListener('click',()=>openModal(button.dataset.enquire)));
+  websiteType.addEventListener('change',()=>{selectedCategory=websiteType.value;});
   form.querySelectorAll('input[name="domainChoice"]').forEach(input=>input.addEventListener('change',syncDomainChoice));
   closeButton.addEventListener('click',closeModal);
   modal.addEventListener('click',event=>{if(event.target===modal)closeModal();});
@@ -203,6 +209,7 @@ body.modal-open{overflow:hidden}
   form.addEventListener('submit',event=>{
     event.preventDefault();
     const choice=form.querySelector('input[name="domainChoice"]:checked').value;
+    selectedCategory=websiteType.value;
     const domain=choice==='have'?domainInput.value.trim():'Not purchased yet — need domain suggestions';
     const message='Hi AK × ST Advertising,\n\nI’m interested in a website.\n\nWebsite type: '+selectedCategory+'\nDomain requirement: '+(choice==='have'?'I already have a domain':'I need a new domain')+'\nDomain: '+domain+'\n\nPlease share the pricing, process and timeline.';
     window.open('https://wa.me/919112573020?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');
