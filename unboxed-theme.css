@@ -80,3 +80,86 @@ main section p,main section li{color:#a5a5a5}
 main section a:not(.btn):not(.cta-button):not(.web-button):hover{color:#ed343b}
 .page-hero,.hero{background-color:#080808!important}
 
+
+
+/* =========================================================
+   SITE-WIDE SPACING REDUCTION — tighter, denser layouts
+   Applied across every page using this shared stylesheet.
+========================================================= */
+:root{--section-space:clamp(42px,5vw,72px)}
+main section:not(.hero):not(.page-hero):not(.hero-section){padding-top:var(--section-space)!important;padding-bottom:var(--section-space)!important}
+main section .section-head,
+main section .section-header,
+main section .section-heading,
+main section .work-header,
+main section .section-intro-wrap{margin-bottom:32px!important}
+main section .section-head{gap:32px!important}
+main section .section-head h2,
+main section .section-header h2,
+main section .section-heading h2{margin-bottom:0!important}
+main section .service-grid,
+main section .marketing-grid,
+main section .industry-grid,
+main section .project-grid,
+main section .work-grid,
+main section .web-grid,
+main section .cards-grid,
+main section .services-grid{gap:12px!important}
+main section .service-card,
+main section .marketing-card,
+main section .industry,
+main section .industry-card,
+main section .why-card{padding:clamp(17px,2vw,25px)!important}
+main section .service-card{min-height:0!important}
+main section .marketing-card{min-height:0!important}
+main section .section-intro{font-size:clamp(15px,1.2vw,18px)!important;line-height:1.6!important}
+main section p{line-height:1.6}
+main section .process-item{padding:25px 0!important}
+main section .web-card{min-height:340px!important;padding:28px!important}
+main section .industry{min-height:175px!important}
+main .cta,
+main section.cta,
+main section.final-cta{padding-top:clamp(55px,6vw,85px)!important;padding-bottom:clamp(55px,6vw,85px)!important}
+main .cta-inner{gap:36px!important}
+footer{padding-top:22px!important;padding-bottom:22px!important}
+.hero:not(.page-hero),.page-hero,.hero-section{min-height:min(82vh,760px)}
+.hero-content,.hero-inner,.page-hero .container{padding-top:120px!important;padding-bottom:65px!important}
+@media(max-width:900px){
+ :root{--section-space:38px}
+ main section:not(.hero):not(.page-hero):not(.hero-section){padding-top:var(--section-space)!important;padding-bottom:var(--section-space)!important}
+ main section .section-head,
+ main section .section-header,
+ main section .section-heading{gap:18px!important;margin-bottom:26px!important}
+ main section .service-grid,
+ main section .marketing-grid,
+ main section .industry-grid,
+ main section .project-grid,
+ main section .work-grid,
+ main section .web-grid,
+ main section .cards-grid,
+ main section .services-grid{gap:10px!important}
+ main section .service-card,
+ main section .marketing-card,
+ main section .industry,
+ main section .industry-card,
+ main section .why-card{padding:16px!important}
+ main section .web-card{min-height:290px!important;padding:22px!important}
+ main section .process-item{padding:20px 0!important}
+ .hero-content,.hero-inner,.page-hero .container{padding-top:105px!important;padding-bottom:45px!important}
+}
+@media(max-width:480px){
+ :root{--section-space:30px}
+ main section:not(.hero):not(.page-hero):not(.hero-section){padding-top:30px!important;padding-bottom:30px!important}
+ main section .section-head,
+ main section .section-header,
+ main section .section-heading{margin-bottom:20px!important}
+ main section .service-card,
+ main section .marketing-card,
+ main section .industry,
+ main section .industry-card,
+ main section .why-card{padding:13px!important}
+ main section .web-card{min-height:250px!important;padding:17px!important}
+ main section .process-item{padding:16px 0!important}
+ .hero-content,.hero-inner,.page-hero .container{padding-top:95px!important;padding-bottom:35px!important}
+ footer{padding-top:18px!important;padding-bottom:18px!important}
+}
