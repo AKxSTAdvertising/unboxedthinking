@@ -2,19 +2,29 @@
 (function(){
  "use strict";
  var CONFIG={variant:"streaks",speed:15.0,streakOpacity:0.60,tileOpacity:0.90,fov:75,hue:0,saturation:1.00,brightness:1.00};
- var overlay=document.createElement("div");
- overlay.className="ut-intro";
- overlay.innerHTML='<div class="ut-intro-grid"></div><div class="ut-intro-copy"><div class="ut-kicker">INDEPENDENT THINKING · UNCOMMON OUTCOMES</div><div class="ut-stage"><span class="ut-word first">UNBOXED</span><span class="ut-word second">THINK<span>I</span>NG<span>.</span></span><span class="ut-word combined">UNBOXED THINKING<span>.</span></span></div></div><div class="ut-bottom"><span>— IDEAS WITHOUT A BOX</span><span>THINK DIFFERENTLY</span></div>';
- document.body.classList.add("ut-loading");
- document.body.insertBefore(overlay,document.body.firstChild);
- var words=overlay.querySelectorAll(".ut-word"),reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+ var currentFile=(window.location.pathname.split("/").pop()||"index.html").toLowerCase();
+ var navEntry=window.performance&&performance.getEntriesByType?performance.getEntriesByType("navigation")[0]:null;
+ var shouldPlayIntro=currentFile==="index.html"||(navEntry&&navEntry.type==="reload");
+ try{if(sessionStorage.getItem("ut-intro-target")===currentFile){shouldPlayIntro=true;sessionStorage.removeItem("ut-intro-target");}}catch(e){}
+ if(currentFile==="web-development.html"){
+  document.addEventListener("click",function(e){var link=e.target.closest("a.website-choice,a.landing-choice");if(!link)return;try{sessionStorage.setItem("ut-intro-target",link.getAttribute("href").split("/").pop().toLowerCase());}catch(err){};});
+ }
+ var overlay=null;
+ if(shouldPlayIntro){
+  overlay=document.createElement("div");
+  overlay.className="ut-intro";
+  overlay.innerHTML='<div class="ut-intro-grid"></div><div class="ut-intro-copy"><div class="ut-kicker">INDEPENDENT THINKING · UNCOMMON OUTCOMES</div><div class="ut-stage"><span class="ut-word first">UNBOXED</span><span class="ut-word second">THINK<span>I</span>NG<span>.</span></span><span class="ut-word combined">UNBOXED THINKING<span>.</span></span></div></div><div class="ut-bottom"><span>— IDEAS WITHOUT A BOX</span><span>THINK DIFFERENTLY</span></div>';
+  document.body.classList.add("ut-loading");
+  document.body.insertBefore(overlay,document.body.firstChild);
+ }
+ var words=overlay?overlay.querySelectorAll(".ut-word"):[],reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
  function show(n){words.forEach(function(el,i){el.classList.toggle("show",i===n);el.classList.toggle("hide",i<n);});}
  var start=performance.now(),loaded=document.readyState==="complete",finished=false;
  window.addEventListener("load",function(){loaded=true;tryOpen();},{once:true});
  setTimeout(function(){show(0);},120);
  setTimeout(function(){show(1);},reduced?120:920);
  setTimeout(function(){show(2);},reduced?120:1720);
- function open(){if(finished)return;finished=true;overlay.classList.add("exit");document.body.classList.remove("ut-loading");setTimeout(function(){if(window.__utIntroWarp)window.__utIntroWarp.destroy();overlay.remove();},950);}
+ function open(){if(finished)return;finished=true;if(!overlay)return;overlay.classList.add("exit");document.body.classList.remove("ut-loading");setTimeout(function(){if(window.__utIntroWarp)window.__utIntroWarp.destroy();overlay.remove();},950);}
  function tryOpen(){if(loaded&&performance.now()-start>=(reduced?500:2850))open();}
  setTimeout(tryOpen,reduced?500:2850);setTimeout(open,9000);
 
@@ -65,7 +75,7 @@
  }
  function mountAll(){
   if(!window.THREE){return;}
-  window.__utIntroWarp=makeWarp(overlay,CONFIG);
+  if(overlay)window.__utIntroWarp=makeWarp(overlay,CONFIG);
   document.querySelectorAll(".hero,.page-hero,.hero-section").forEach(function(hero){
    if(hero.querySelector(".ut-warp-layer"))return;
    if(getComputedStyle(hero).position==="static")hero.style.position="relative";
