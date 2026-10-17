@@ -26,7 +26,7 @@
       menu.style.setProperty("visibility", "visible", "important");
       menu.style.setProperty("opacity", "1", "important");
       menu.style.setProperty("pointer-events", "auto", "important");
-      menu.style.setProperty("z-index", "2147483000", "important");
+      menu.style.setProperty("z-index", "11000", "important");
       menu.style.setProperty("transform", "none", "important");
     } else {
       ["display", "visibility", "opacity", "pointer-events", "z-index", "transform"]
