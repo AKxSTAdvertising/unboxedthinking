@@ -2838,6 +2838,34 @@ document
     opacity: 1;
 }
 
+/* FIX: ensure the two intro cards have readable text on their light surface */
+.intro-strip .intro-box {
+    background: #f7f7f8 !important;
+    color: #17151f !important;
+}
+.intro-strip .intro-box h3 {
+    color: #17151f !important;
+}
+.intro-strip .intro-box p {
+    color: #465164 !important;
+}
+.intro-strip .intro-box .intro-box-number {
+    color: #7c3aed !important;
+}
+.intro-strip .intro-box:hover {
+    background: #7c3aed !important;
+    border-color: #7c3aed !important;
+    color: #ffffff !important;
+}
+.intro-strip .intro-box:hover h3,
+.intro-strip .intro-box:hover p {
+    color: #ffffff !important;
+}
+.intro-strip .intro-box:hover .intro-box-number {
+    color: #e7e0f8 !important;
+}
+
+
 </style>
 <script id="current-page-nav-fix-script">
 (function(){
