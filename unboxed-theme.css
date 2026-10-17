@@ -70,3 +70,12 @@ footer,.footer,.work-footer{background:#050505!important;color:#aaa!important;bo
 body.ut-loading{overflow:hidden!important}
 @media(max-width:700px){.ut-intro .ut-kicker{letter-spacing:2px}.ut-intro .ut-bottom{left:15px;right:15px;bottom:15px;font-size:8px;letter-spacing:1px}.hero .ut-warp-layer{opacity:.6}}
 @media(prefers-reduced-motion:reduce){.ut-intro *{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Uniform page-wide treatment: every content section follows the dark brand system */
+main{background:#080808!important;color:#f5f5f5!important}
+main section:not(.hero):not(.page-hero){background:#0b0b0b!important;color:#f5f5f5!important}
+main section h1,main section h2,main section h3,main section h4{color:#f5f5f5}
+main section h1 span,main section h2 span,main section h3 span{color:#ed343b}
+main section p,main section li{color:#a5a5a5}
+main section a:not(.btn):not(.cta-button):not(.web-button):hover{color:#ed343b}
+.page-hero,.hero{background-color:#080808!important}
