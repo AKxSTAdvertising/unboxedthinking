@@ -772,6 +772,7 @@
 
 <link rel="stylesheet" href="unboxed-theme.css">
   <link rel="stylesheet" href="unboxed-theme.css?v=20261017-theme-fix">
+<link rel="stylesheet" href="site-nav.css?v=20261017-shared-nav-v1">
 </head>
 
 
@@ -1472,81 +1473,7 @@ Digital Marketing · Web Development · SEO · Paid Ads
 /* =====================================================
    LOAD CENTRAL NAVBAR
 ===================================================== */
-
-fetch("navbar.html")
-.then(function(response){
-
-    if(!response.ok){
-        throw new Error("Navbar could not be loaded.");
-    }
-
-    return response.text();
-
-})
-.then(function(data){
-
-    document.getElementById("navbar").innerHTML = data;
-
-    /*
-       navbar.html contains the mobile menu HTML/CSS.
-       Because scripts inside innerHTML do not execute,
-       initialize the hamburger here.
-    */
-
-    const menuButton =
-        document.getElementById("akstMenuBtn");
-
-    const mobileMenu =
-        document.getElementById("akstMobileMenu");
-
-
-    if(menuButton && mobileMenu){
-
-        menuButton.addEventListener(
-            "click",
-            function(){
-
-                menuButton.classList.toggle("active");
-
-                mobileMenu.classList.toggle("active");
-
-                document.body.classList.toggle(
-                    "akst-menu-open"
-                );
-
-            }
-        );
-
-
-        mobileMenu
-        .querySelectorAll("a")
-        .forEach(function(link){
-
-            link.addEventListener(
-                "click",
-                function(){
-
-                    menuButton.classList.remove("active");
-
-                    mobileMenu.classList.remove("active");
-
-                    document.body.classList.remove(
-                        "akst-menu-open"
-                    );
-
-                }
-            );
-
-        });
-
-    }
-
-})
-.catch(function(error){
-
-    console.error("Navbar loading failed:",error);
-
-});
+fetch("navbar.html").then(function(response){if(!response.ok)throw new Error("Navbar could not be loaded.");return response.text();}).then(function(data){document.getElementById("navbar").innerHTML=data;}).catch(function(error){console.error("Navbar loading failed:",error);});
 
 
 /* =====================================================
@@ -1625,6 +1552,7 @@ document
 
 </script>
 
+<script src="site-nav.js?v=20261017-shared-nav-v1"></script>
 <script src="unboxed-motion.js"></script>
 </body>
 </html>
