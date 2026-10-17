@@ -2808,6 +2808,30 @@ document
     }
 }
 
+
+
+/* FORCE SELECTED WEBSITE PROJECTS TO REMAIN VISIBLE */
+.projects .project-card.reveal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none;
+}
+.projects .project-card.reveal.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none;
+}
+.projects .project-card .project-content,
+.projects .project-card .project-content h3,
+.projects .project-card .project-content p,
+.projects .project-card .project-meta,
+.projects .project-card .project-tags,
+.projects .project-card .project-tag,
+.projects .project-card .case-btn {
+    visibility: visible;
+    opacity: 1;
+}
+
 </style>
 <script id="current-page-nav-fix-script">
 (function(){
