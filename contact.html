@@ -2458,18 +2458,27 @@ document
 </style>
 <script id="current-page-nav-fix-script">
 (function(){
-  var current=(window.location.pathname.split('/').pop()||'index.html').toLowerCase();
-  var aliases={'website-projects.html':'web-development.html','landing-page-projects.html':'web-development.html'};
-  var active=aliases[current]||current;
-  document.querySelectorAll('.nav-links a[href],.mobile-links a[href]').forEach(function(link){
-    try{
-      var target=(new URL(link.getAttribute('href'),window.location.href).pathname.split('/').pop()||'index.html').toLowerCase();
-      if(target===active){
-        link.classList.add('is-current-page');
-        link.setAttribute('aria-current','page');
-      }
-    }catch(e){}
-  });
+  function applyCurrentPage(){
+    var current=(window.location.pathname.split('/').pop()||'index.html').toLowerCase();
+    var aliases={'website-projects.html':'web-development.html','landing-page-projects.html':'web-development.html'};
+    var active=aliases[current]||current;
+    document.querySelectorAll('.nav-links a[href],.mobile-links a[href]').forEach(function(link){
+      try{
+        var target=(new URL(link.getAttribute('href'),window.location.href).pathname.split('/').pop()||'index.html').toLowerCase();
+        if(target===active){
+          link.classList.add('is-current-page');
+          link.setAttribute('aria-current','page');
+        }else{
+          link.classList.remove('is-current-page');
+          link.removeAttribute('aria-current');
+        }
+      }catch(e){}
+    });
+  }
+  applyCurrentPage();
+  if(document.body){
+    new MutationObserver(function(){applyCurrentPage();}).observe(document.body,{childList:true,subtree:true});
+  }
 })();
 </script>
 
