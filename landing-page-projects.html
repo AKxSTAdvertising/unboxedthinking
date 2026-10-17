@@ -69,6 +69,7 @@ body.modal-open{overflow:hidden}
 .domain-option{display:flex;align-items:center;gap:11px;padding:13px;border:1px solid rgba(255,255,255,.15);background:#171717;color:#eee;font-size:12px;cursor:pointer}
 .domain-option:has(input:checked){border-color:var(--collection-red);background:rgba(237,52,59,.07)}
 .domain-option input{accent-color:var(--collection-red)}
+.type-field{display:block;margin:0 0 17px}.type-field span{display:block;margin-bottom:7px;color:#aaa;font-size:11px}.type-field select{width:100%;height:44px;padding:0 12px;border:1px solid rgba(255,255,255,.18);background:#080808;color:#fff;outline:0;font-size:13px}.type-field select:focus{border-color:var(--collection-red)}
 .domain-field{display:block;margin:0 0 17px}
 .domain-field span{display:block;margin-bottom:7px;color:#aaa;font-size:11px}
 .domain-field input{width:100%;height:44px;padding:0 12px;border:1px solid rgba(255,255,255,.18);background:#080808;color:#fff;outline:0;font-size:13px}
@@ -106,7 +107,7 @@ body.modal-open{overflow:hidden}
     <div class="collection-topline reveal"><span class="collection-kicker">LANDING PAGE COLLECTION</span><span class="collection-count">06 CATEGORIES</span></div>
     <div class="collection-heading reveal">
       <h1>One page. One clear goal.</h1>
-      <p>Explore conversion-focused landing experiences built around a single action — launch a product, capture a lead, promote a campaign or drive a registration.</p>
+      <p>Choose the landing page type you need, then send a quick enquiry. We’ll help you plan a page around your campaign goal.</p>
     </div>
     <label class="collection-search reveal">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.6"/><path d="m16 16 4.2 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -115,31 +116,31 @@ body.modal-open{overflow:hidden}
     <div class="collection-grid" id="collectionGrid">
       <article class="collection-card reveal" data-search="product launch new product release feature showcase">
         <div class="collection-image"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85" alt="Product displayed for a launch campaign" loading="lazy"><span class="collection-index">LAUNCH</span><span class="collection-image-label">Make an entrance</span></div>
-        <div class="collection-body"><div class="collection-type">Product / Launch</div><h2>Product Launch</h2><p>Present a new product, its value and the next action in one focused experience.</p><button class="collection-action" type="button" data-enquire="Product Launch Landing Page">Enquire about this ↗</button></div>
+        <div class="collection-body"><div class="collection-type">Product / Launch</div><h2>Product Launch</h2><p>Present a new product, its value and the next action in one focused experience.</p><button class="collection-action" type="button" data-enquire="Product Launch">Enquire about this ↗</button></div>
       </article>
       <article class="collection-card reveal" data-search="lead generation enquiries contact form prospects services">
         <div class="collection-image"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=85" alt="Team planning a lead generation campaign" loading="lazy"><span class="collection-index">LEADS</span><span class="collection-image-label">Turn clicks into leads</span></div>
-        <div class="collection-body"><div class="collection-type">Lead Generation</div><h2>Lead Generation</h2><p>Focused pages for service enquiries, lead forms and qualified prospects.</p><button class="collection-action" type="button" data-enquire="Lead Generation Landing Page">Enquire about this ↗</button></div>
+        <div class="collection-body"><div class="collection-type">Lead Generation</div><h2>Lead Generation</h2><p>Focused pages for service enquiries, lead forms and qualified prospects.</p><button class="collection-action" type="button" data-enquire="Lead Generation">Enquire about this ↗</button></div>
       </article>
       <article class="collection-card reveal" data-search="brand campaign marketing promotion awareness">
         <div class="collection-image"><img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=900&q=85" alt="Creative brand campaign materials" loading="lazy"><span class="collection-index">CAMPAIGN</span><span class="collection-image-label">One campaign, one story</span></div>
-        <div class="collection-body"><div class="collection-type">Brand / Campaign</div><h2>Campaign Pages</h2><p>Give an advertising campaign a clear message, destination and call to action.</p><button class="collection-action" type="button" data-enquire="Brand or Campaign Landing Page">Enquire about this ↗</button></div>
+        <div class="collection-body"><div class="collection-type">Brand / Campaign</div><h2>Campaign Pages</h2><p>Give an advertising campaign a clear message, destination and call to action.</p><button class="collection-action" type="button" data-enquire="Campaign Pages">Enquire about this ↗</button></div>
       </article>
       <article class="collection-card reveal" data-search="event webinar registration workshop conference signup">
         <div class="collection-image"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=85" alt="Event venue set for a gathering" loading="lazy"><span class="collection-index">EVENTS</span><span class="collection-image-label">Fill the room</span></div>
-        <div class="collection-body"><div class="collection-type">Events / Registration</div><h2>Event & Webinar</h2><p>Share the event details and make registrations easy across devices.</p><button class="collection-action" type="button" data-enquire="Event or Webinar Landing Page">Enquire about this ↗</button></div>
+        <div class="collection-body"><div class="collection-type">Events / Registration</div><h2>Event & Webinar</h2><p>Share the event details and make registrations easy across devices.</p><button class="collection-action" type="button" data-enquire="Event & Webinar">Enquire about this ↗</button></div>
       </article>
       <article class="collection-card reveal" data-search="sales offer deal promotion product conversion">
         <div class="collection-image"><img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=900&q=85" alt="Shopping bags and products for a sales promotion" loading="lazy"><span class="collection-index">SALES</span><span class="collection-image-label">Make the offer clear</span></div>
-        <div class="collection-body"><div class="collection-type">Sales / Offer</div><h2>Sales & Offer Pages</h2><p>Focused offer pages that explain the value and guide visitors to take action.</p><button class="collection-action" type="button" data-enquire="Sales or Offer Landing Page">Enquire about this ↗</button></div>
+        <div class="collection-body"><div class="collection-type">Sales / Offer</div><h2>Sales & Offer Pages</h2><p>Focused offer pages that explain the value and guide visitors to take action.</p><button class="collection-action" type="button" data-enquire="Sales & Offer Pages">Enquire about this ↗</button></div>
       </article>
       <article class="collection-card reveal" data-search="real estate property launch builder apartments site visit enquiry">
         <div class="collection-image"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=85" alt="Premium residential property for a real estate campaign" loading="lazy"><span class="collection-index">PROPERTY</span><span class="collection-image-label">Property enquiries</span></div>
-        <div class="collection-body"><div class="collection-type">Real Estate</div><h2>Real Estate Landing Pages</h2><p>Property launches and campaign pages built around site visits and buyer enquiries.</p><button class="collection-action" type="button" data-enquire="Real Estate Landing Page">Enquire about this ↗</button></div>
+        <div class="collection-body"><div class="collection-type">Real Estate</div><h2>Real Estate Landing Pages</h2><p>Property launches and campaign pages built around site visits and buyer enquiries.</p><button class="collection-action" type="button" data-enquire="Real Estate Landing Pages">Enquire about this ↗</button></div>
       </article>
       <div class="collection-empty" id="emptyState">No matching categories. Try another search, or contact us about a custom landing page.</div>
     </div>
-    <div class="collection-note reveal">Every landing page enquiry includes a choice to use your existing domain or get help choosing a new one.</div>
+    <div class="collection-note reveal">Choose any landing page card to open the enquiry form, or select a custom landing page if you’re not sure.</div>
   </div>
 </main>
 <footer class="collection-footer"><div class="container"><strong>UNBOXED THINKING.</strong><span>Web Development · Digital Marketing · SEO · Paid Ads</span><span>© 2026</span></div></footer>
@@ -149,6 +150,7 @@ body.modal-open{overflow:hidden}
     <div class="inquiry-kicker">Project enquiry / Landing page</div>
     <h2 id="inquiryTitle">Let's talk about your landing page.</h2>
     <p id="inquiryDescription">Tell us whether you already have a domain. We'll prepare your enquiry on WhatsApp.</p>
+    <label class="type-field" for="websiteType"><span>Which landing page do you need?</span><select id="websiteType" name="websiteType" required><option value="Product Launch" selected>Product Launch</option><option value="Lead Generation">Lead Generation</option><option value="Campaign Pages">Campaign Pages</option><option value="Event & Webinar">Event & Webinar</option><option value="Sales & Offer Pages">Sales & Offer Pages</option><option value="Real Estate Landing Pages">Real Estate Landing Pages</option><option value="Custom Landing Page / Not Sure">Custom Landing Page / Not Sure</option></select></label>
     <div class="domain-options">
       <label class="domain-option"><input type="radio" name="domainChoice" value="have" checked> I already have a domain</label>
       <label class="domain-option"><input type="radio" name="domainChoice" value="need"> I need a new domain</label>
@@ -165,10 +167,13 @@ body.modal-open{overflow:hidden}
   const form=document.getElementById('inquiryForm');
   const domainInput=document.getElementById('domainInput');
   const domainField=document.getElementById('domainField');
+  const websiteType=document.getElementById('websiteType');
   let selectedCategory='Landing Page';
   const closeButton=document.getElementById('closeInquiry');
   function openModal(category){
     selectedCategory=category;
+    websiteType.value=category;
+    if(!websiteType.value){websiteType.value=websiteType.options[0].value;selectedCategory=websiteType.value;}
     document.getElementById('inquiryTitle').textContent='Let’s plan your '+category.toLowerCase()+'.';
     document.getElementById('inquiryDescription').textContent='Tell us whether you already have a domain. We’ll prepare your enquiry on WhatsApp.';
     modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.classList.add('modal-open');
@@ -183,6 +188,7 @@ body.modal-open{overflow:hidden}
     if(!hasDomain)domainInput.value='';
   }
   document.querySelectorAll('[data-enquire]').forEach(button=>button.addEventListener('click',()=>openModal(button.dataset.enquire)));
+  websiteType.addEventListener('change',()=>{selectedCategory=websiteType.value;});
   form.querySelectorAll('input[name="domainChoice"]').forEach(input=>input.addEventListener('change',syncDomainChoice));
   closeButton.addEventListener('click',closeModal);
   modal.addEventListener('click',event=>{if(event.target===modal)closeModal();});
@@ -190,6 +196,7 @@ body.modal-open{overflow:hidden}
   form.addEventListener('submit',event=>{
     event.preventDefault();
     const choice=form.querySelector('input[name="domainChoice"]:checked').value;
+    selectedCategory=websiteType.value;
     const domain=choice==='have'?domainInput.value.trim():'Not purchased yet — need domain suggestions';
     const message='Hi AK × ST Advertising,\n\nI’m interested in a landing page.\n\nLanding page type: '+selectedCategory+'\nDomain requirement: '+(choice==='have'?'I already have a domain':'I need a new domain')+'\nDomain: '+domain+'\n\nPlease share the pricing, process and timeline.';
     window.open('https://wa.me/919112573020?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');
