@@ -1896,6 +1896,7 @@ Let's Talk →
 
             <article class="project-card reveal">
                 <a class="project-image" href="https://anupguptastudio.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Anup Gupta Studio homepage">
+                    <span class="project-brand-overlay">Anup Gupta Studio</span>
                     <img class="project-homepage-shot" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fanupguptastudio.com%2F?w=1200" alt="Anup Gupta Studio homepage screenshot" loading="lazy" referrerpolicy="no-referrer">
                 </a>
                 <div class="project-content">
@@ -1912,6 +1913,7 @@ Let's Talk →
 
             <article class="project-card reveal">
                 <a class="project-image" href="https://fortuneadvertising.in/" target="_blank" rel="noopener noreferrer" aria-label="Open Fortune BTL Advertising homepage">
+                    <span class="project-brand-overlay">Fortune BTL Advertising</span>
                     <img class="project-homepage-shot" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Ffortuneadvertising.in%2F?w=1200" alt="Fortune BTL Advertising homepage screenshot" loading="lazy" referrerpolicy="no-referrer">
                 </a>
                 <div class="project-content">
@@ -1928,6 +1930,7 @@ Let's Talk →
 
             <article class="project-card reveal">
                 <a class="project-image" href="https://tophumanresource.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Top Human Resource homepage">
+                    <span class="project-brand-overlay">Top Human Resource</span>
                     <img class="project-homepage-shot" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Ftophumanresource.com%2F?w=1200" alt="Top Human Resource homepage screenshot" loading="lazy" referrerpolicy="no-referrer">
                 </a>
                 <div class="project-content">
@@ -1944,6 +1947,7 @@ Let's Talk →
 
             <article class="project-card reveal">
                 <a class="project-image" href="https://avnor.media/" target="_blank" rel="noopener noreferrer" aria-label="Open AVNOR Media homepage">
+                    <span class="project-brand-overlay">AVNOR Media</span>
                     <img class="project-homepage-shot" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Favnor.media%2F?w=1200" alt="AVNOR Media homepage screenshot" loading="lazy" referrerpolicy="no-referrer">
                 </a>
                 <div class="project-content">
@@ -1960,6 +1964,7 @@ Let's Talk →
 
             <article class="project-card reveal">
                 <a class="project-image" href="https://excelitsolution.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Excel IT Solution homepage">
+                    <span class="project-brand-overlay">Excel IT Solution</span>
                     <img class="project-homepage-shot" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fexcelitsolution.com%2F?w=1200" alt="Excel IT Solution homepage screenshot" loading="lazy" referrerpolicy="no-referrer">
                 </a>
                 <div class="project-content">
@@ -1976,6 +1981,7 @@ Let's Talk →
 
             <article class="project-card reveal">
                 <a class="project-image" href="https://cplx.media/" target="_blank" rel="noopener noreferrer" aria-label="Open CPLX Media homepage">
+                    <span class="project-brand-overlay">CPLX Media</span>
                     <img class="project-homepage-shot" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fcplx.media%2F?w=1200" alt="CPLX Media homepage screenshot" loading="lazy" referrerpolicy="no-referrer">
                 </a>
                 <div class="project-content">
@@ -2830,6 +2836,34 @@ document
 .projects .project-card .case-btn {
     visibility: visible;
     opacity: 1;
+}
+
+
+/* Brand names inside website preview placeholders */
+.projects .project-image{position:relative;isolation:isolate}
+.projects .project-brand-overlay{
+    position:absolute;
+    z-index:3;
+    left:14px;
+    bottom:14px;
+    display:inline-flex;
+    align-items:center;
+    max-width:calc(100% - 28px);
+    padding:10px 14px;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:8px;
+    background:rgba(8,11,18,.88);
+    color:#fff !important;
+    font-family:"Manrope",sans-serif;
+    font-size:clamp(12px,1.2vw,16px);
+    font-weight:800;
+    line-height:1.25;
+    letter-spacing:-.02em;
+    text-shadow:none;
+    box-shadow:0 5px 20px rgba(0,0,0,.18);
+    pointer-events:none;
+    visibility:visible !important;
+    opacity:1 !important;
 }
 
 </style>
