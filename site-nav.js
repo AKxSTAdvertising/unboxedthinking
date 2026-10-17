@@ -1,13 +1,20 @@
-/* Shared hamburger controller — reset with explicit visibility overrides. */
+/* Per-page hamburger controller. Each page owns its own toggle and menu panel. */
 (function () {
   "use strict";
 
-  function getToggle() { return document.getElementById("menuToggle"); }
-  function getMenu() { return document.getElementById("mobileMenu"); }
+  function getPairs() {
+    var toggles = Array.prototype.slice.call(document.querySelectorAll(".menu-toggle"));
+    return toggles.map(function (toggle) {
+      var targetId = toggle.getAttribute("data-menu-target");
+      var menu = targetId ? document.getElementById(targetId) : null;
 
-  function setMenu(open) {
-    var toggle = getToggle();
-    var menu = getMenu();
+      /* Backward compatibility for pages still using the original shared IDs. */
+      if (!menu && toggle.id === "menuToggle") menu = document.getElementById("mobileMenu");
+      return menu ? { toggle: toggle, menu: menu } : null;
+    }).filter(Boolean);
+  }
+
+  function setMenu(toggle, menu, open) {
     if (!toggle || !menu) return;
 
     menu.classList.toggle("active", open);
@@ -15,7 +22,6 @@
     menu.setAttribute("aria-hidden", open ? "false" : "true");
 
     if (open) {
-      /* Force the open state over conflicting page-specific !important rules. */
       menu.style.setProperty("display", "flex", "important");
       menu.style.setProperty("visibility", "visible", "important");
       menu.style.setProperty("opacity", "1", "important");
@@ -33,40 +39,49 @@
     document.body.classList.toggle("menu-open", open);
   }
 
+  function closeAll() {
+    getPairs().forEach(function (pair) {
+      setMenu(pair.toggle, pair.menu, false);
+    });
+  }
+
   function init() {
-    var toggle = getToggle();
-    var menu = getMenu();
-    if (!toggle || !menu) return;
+    getPairs().forEach(function (pair) {
+      var toggle = pair.toggle;
+      var menu = pair.menu;
 
-    if (toggle.dataset.hamburgerResetBound !== "v7") {
-      toggle.dataset.hamburgerResetBound = "v7";
-      toggle.addEventListener("click", function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        var currentMenu = getMenu();
-        setMenu(!(currentMenu && (currentMenu.classList.contains("active") || currentMenu.classList.contains("open"))));
-      }, true);
-    }
+      if (toggle.dataset.hamburgerBound !== "v8") {
+        toggle.dataset.hamburgerBound = "v8";
+        toggle.addEventListener("click", function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+          var isOpen = menu.classList.contains("active") || menu.classList.contains("open");
+          setMenu(toggle, menu, !isOpen);
+        }, true);
+      }
 
-    if (menu.dataset.hamburgerResetBound !== "v7") {
-      menu.dataset.hamburgerResetBound = "v7";
-      menu.addEventListener("click", function (event) {
-        if (event.target === menu || (event.target.closest && event.target.closest("a"))) setMenu(false);
-      });
-    }
+      if (menu.dataset.hamburgerBound !== "v8") {
+        menu.dataset.hamburgerBound = "v8";
+        menu.addEventListener("click", function (event) {
+          if (event.target === menu || (event.target.closest && event.target.closest("a"))) {
+            setMenu(toggle, menu, false);
+          }
+        });
+      }
+    });
   }
 
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") setMenu(false);
+    if (event.key === "Escape") closeAll();
   });
 
   window.addEventListener("resize", function () {
-    if (window.innerWidth > 900) setMenu(false);
+    if (window.innerWidth > 900) closeAll();
   });
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 
-  /* Work page inserts navbar.html after page load. */
+  /* Supports navigation markup inserted after initial page load. */
   new MutationObserver(init).observe(document.documentElement, { childList: true, subtree: true });
 })();
