@@ -1547,6 +1547,7 @@ footer{
 </style>
 <link rel="stylesheet" href="unboxed-theme.css">
   <link rel="stylesheet" href="unboxed-theme.css?v=20261017-theme-fix">
+<link rel="stylesheet" href="site-nav.css?v=20261017-shared-nav-v1">
 </head>
 
 
@@ -1559,111 +1560,91 @@ footer{
 
 <header class="nav" id="nav">
 
-    <div class="container nav-inner">
+<div class="container nav-inner">
 
-        <a href="index.html" class="logo">
-            UNBOXED <span>THINKING.</span>
-        </a>
-
-        <nav class="nav-links">
-
-            <a href="index.html">Home</a>
-
-            
-
-            <a href="services.html">Services</a>
-
-            <a href="web-development.html">
-                Web Development
-            </a>
-
-            <a href="work.html">Work</a>
-
-            <a href="contact.html" class="nav-cta">
-                Let's Talk
-            </a>
-
-        </nav>
+<a href="index.html" class="logo">
+UNBOXED <span>THINKING.</span>
+</a>
 
 
-        <!-- MOBILE MENU BUTTON -->
+<nav class="nav-links">
 
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            aria-label="Open menu"
-            aria-expanded="false"
-            type="button"
-        >
+<a href="index.html">Home</a>
 
-            <span></span>
-            <span></span>
 
-        </button>
 
-    </div>
+<a href="services.html">Services</a>
+
+<a href="web-development.html">Web Development</a>
+
+<a href="work.html">Work</a>
+
+<a href="contact.html" class="nav-cta">
+Let's Talk
+</a>
+
+</nav>
+
+
+<!-- MOBILE HAMBURGER -->
+
+<button
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Open menu"
+    aria-expanded="false"
+>
+
+<span></span>
+<span></span>
+
+</button>
+
+</div>
 
 </header>
 
 
-<!-- =========================================================
+<!-- =====================================================
      MOBILE MENU
-========================================================= -->
+===================================================== -->
 
 <div class="mobile-menu" id="mobileMenu">
 
-    <div class="mobile-menu-panel">
+<div class="mobile-menu-inner">
 
-        <div class="mobile-menu-label">
-            MENU / Unboxed Thinking
-        </div>
-
-
-        <nav class="mobile-nav-links">
-
-            <a href="index.html">
-                <span>01</span>
-                Home
-            </a>
-
-            
-
-            <a href="services.html">
-                <span>03</span>
-                Services
-            </a>
-
-            <a href="web-development.html">
-                <span>04</span>
-                Web Development
-            </a>
-
-            <a href="work.html">
-                <span>05</span>
-                Work
-            </a>
-
-            <a href="contact.html">
-                <span>06</span>
-                Let's Talk
-            </a>
-
-        </nav>
+<div class="mobile-menu-label">
+Unboxed Thinking / MENU
+</div>
 
 
-        <div class="mobile-menu-contact">
+<nav class="mobile-links">
 
-            <span>
-                Digital <strong>Growth</strong>
-            </span>
+<a href="index.html">
+Home
+</a>
 
-            <span>
-                © 2026
-            </span>
 
-        </div>
 
-    </div>
+<a href="services.html">
+Services
+</a>
+
+<a href="web-development.html">
+Web Development
+</a>
+
+<a href="work.html">
+Work
+</a>
+
+<a href="contact.html" class="mobile-cta">
+Let's Talk →
+</a>
+
+</nav>
+
+</div>
 
 </div>
 
@@ -1872,12 +1853,7 @@ footer{
 
                     </div>
 
-                    <a
-                        href="#anup-case"
-                        class="case-btn"
-                    >
-                        View Case Study →
-                    </a>
+                    <a href="https://anupguptastudio.com/" target="_blank" rel="noopener noreferrer" class="case-btn">Visit Website ↗</a>
 
                 </div>
 
@@ -1943,12 +1919,7 @@ footer{
 
                     </div>
 
-                    <a
-                        href="#fortune-case"
-                        class="case-btn"
-                    >
-                        View Case Study →
-                    </a>
+                    <a href="https://fortuneadvertising.in/" target="_blank" rel="noopener noreferrer" class="case-btn">Visit Website ↗</a>
 
                 </div>
 
@@ -2014,12 +1985,7 @@ footer{
 
                     </div>
 
-                    <a
-                        href="#thr-case"
-                        class="case-btn"
-                    >
-                        View Case Study →
-                    </a>
+                    <a href="https://tophumanresource.com/" target="_blank" rel="noopener noreferrer" class="case-btn">Visit Website ↗</a>
 
                 </div>
 
@@ -2084,12 +2050,7 @@ footer{
 
                     </div>
 
-                    <a
-                        href="#business-case"
-                        class="case-btn"
-                    >
-                        View Websites →
-                    </a>
+                    <a href="https://avnor.media/" target="_blank" rel="noopener noreferrer" class="case-btn">Visit Website ↗</a>
 
                 </div>
 
@@ -2752,129 +2713,6 @@ updateNavbar();
 
 
 /* =========================================================
-   MOBILE MENU
-========================================================= */
-
-const menuToggle =
-    document.getElementById("menuToggle");
-
-const mobileMenu =
-    document.getElementById("mobileMenu");
-
-const mobileLinks =
-    document.querySelectorAll(".mobile-nav-links a");
-
-
-function openMenu(){
-
-    mobileMenu.classList.add("active");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        "true"
-    );
-
-    menuToggle.setAttribute(
-        "aria-label",
-        "Close menu"
-    );
-
-    document.body.classList.add("menu-open");
-
-}
-
-
-function closeMenu(){
-
-    mobileMenu.classList.remove("active");
-
-    menuToggle.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
-    menuToggle.setAttribute(
-        "aria-label",
-        "Open menu"
-    );
-
-    document.body.classList.remove("menu-open");
-
-}
-
-
-menuToggle.addEventListener(
-    "click",
-    ()=>{
-
-        if(
-            mobileMenu.classList.contains("active")
-        ){
-
-            closeMenu();
-
-        }else{
-
-            openMenu();
-
-        }
-
-    }
-);
-
-
-/* CLOSE AFTER CLICK */
-
-mobileLinks.forEach(link=>{
-
-    link.addEventListener(
-        "click",
-        ()=>{
-
-            closeMenu();
-
-        }
-    );
-
-});
-
-
-/* CLOSE WHEN CLICKING OUTSIDE PANEL */
-
-mobileMenu.addEventListener(
-    "click",
-    (event)=>{
-
-        if(event.target === mobileMenu){
-
-            closeMenu();
-
-        }
-
-    }
-);
-
-
-/* ESCAPE KEY */
-
-document.addEventListener(
-    "keydown",
-    (event)=>{
-
-        if(
-            event.key === "Escape" &&
-            mobileMenu.classList.contains("active")
-        ){
-
-            closeMenu();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
    SCROLL REVEAL
 ========================================================= */
 
@@ -2996,6 +2834,7 @@ window.addEventListener(
 
 </script>
 
+<script src="site-nav.js?v=20261017-shared-nav-v1"></script>
 <script src="unboxed-motion.js"></script>
 </body>
 </html>
