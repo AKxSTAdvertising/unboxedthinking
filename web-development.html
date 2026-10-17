@@ -1544,6 +1544,26 @@ footer{
 
 }
 
+
+/* WEBSITE / LANDING PAGE COLLECTION CHOOSER */
+.collection-entry{padding:92px 0;background:#0b0b0b!important;color:#f5f5f5;border-top:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(255,255,255,.1)}
+.collection-entry .collection-entry-top{display:flex;justify-content:space-between;gap:20px;margin-bottom:20px;font:11px "DM Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:#ed343b}
+.collection-entry h2{max-width:760px;margin:0 0 15px;font-size:clamp(38px,5vw,68px);line-height:.98;letter-spacing:-.065em;color:#f5f5f5}
+.collection-entry .collection-entry-intro{max-width:620px;margin:0 0 28px;color:#a5a5a5;font-size:14px;line-height:1.75}
+.collection-entry-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.collection-entry-card{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:245px;padding:25px;overflow:hidden;border:1px solid rgba(255,255,255,.14);background:#111;color:#fff;transition:transform .4s,border-color .3s}
+.collection-entry-card:before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;opacity:.32;transition:transform .7s,opacity .4s}
+.collection-entry-card.website-choice:before{background-image:linear-gradient(90deg,rgba(8,8,8,.9),rgba(8,8,8,.18)),url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85")}
+.collection-entry-card.landing-choice:before{background-image:linear-gradient(90deg,rgba(8,8,8,.9),rgba(8,8,8,.18)),url("https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1200&q=85")}
+.collection-entry-card:hover{transform:translateY(-4px);border-color:#ed343b}
+.collection-entry-card:hover:before{transform:scale(1.04);opacity:.45}
+.collection-entry-card>*{position:relative;z-index:1}
+.collection-entry-card .choice-kicker{margin-bottom:12px;color:#ed343b;font:10px "DM Mono",monospace;letter-spacing:.14em}
+.collection-entry-card h3{margin:0;font-size:clamp(26px,3vw,38px);line-height:1;letter-spacing:-.055em;color:#fff}
+.collection-entry-card p{max-width:420px;margin:12px 0 20px;color:#c3c3c3;font-size:12px;line-height:1.7}
+.collection-entry-card .choice-link{display:inline-flex;align-items:center;gap:8px;width:max-content;padding:10px 13px;background:#ed343b;color:#fff;font-size:11px;font-weight:800}
+@media(max-width:650px){.collection-entry{padding:68px 0}.collection-entry-grid{grid-template-columns:1fr}.collection-entry-card{min-height:210px;padding:21px}.collection-entry .collection-entry-top{font-size:9px}}
+
 </style>
 <link rel="stylesheet" href="unboxed-theme.css">
   <link rel="stylesheet" href="unboxed-theme.css?v=20261017-theme-fix">
@@ -1678,6 +1698,32 @@ Let's Talk →
     </div>
 
 </section>
+
+
+<!-- WEBSITE / LANDING PAGE COLLECTION CHOOSER -->
+<section class="collection-entry">
+  <div class="container">
+    <div class="collection-entry-top reveal"><span>02 / CHOOSE YOUR BUILD</span><span>WEBSITE OR LANDING PAGE</span></div>
+    <h2 class="reveal">What are we building today?</h2>
+    <p class="collection-entry-intro reveal">Choose a direction to explore the different types of digital experiences we can build. Existing projects open live; new requirements can be sent to us on WhatsApp.</p>
+    <div class="collection-entry-grid">
+      <a class="collection-entry-card website-choice reveal" href="website-projects.html">
+        <span class="choice-kicker">01 / WEBSITE COLLECTION</span>
+        <h3>Websites</h3>
+        <p>Corporate, e-commerce, property, portfolio and other complete website experiences.</p>
+        <span class="choice-link">Explore websites ↗</span>
+      </a>
+      <a class="collection-entry-card landing-choice reveal" href="landing-page-projects.html">
+        <span class="choice-kicker">02 / LANDING PAGE COLLECTION</span>
+        <h3>Landing Pages</h3>
+        <p>Focused pages for product launches, lead generation, campaigns, offers and events.</p>
+        <span class="choice-link">Explore landing pages ↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
 
 
 <!-- =========================================================
