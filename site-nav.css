@@ -392,3 +392,10 @@ body.menu-open{overflow:hidden!important}
   .menu-toggle{position:relative!important;z-index:11002!important;pointer-events:auto!important}
   .mobile-menu{z-index:11000!important}
 }
+
+
+/* Explicit hamburger strokes for pages that inject navbar.html asynchronously. */
+@media(max-width:900px){
+  #menuToggle{display:flex!important;align-items:center!important;justify-content:center!important;flex-direction:column!important;gap:5px!important;}
+  #menuToggle span{display:block!important;width:19px!important;height:2px!important;min-height:2px!important;background:#fff!important;border-radius:10px!important;opacity:1!important;visibility:visible!important;flex:0 0 2px!important;}
+}
