@@ -244,14 +244,14 @@
 
 
 body.menu-open{overflow:hidden!important}
-.mobile-menu{z-index:11000!important;color:#f5f5f5!important}
+.mobile-menu{z-index:11000!important;color:#ffffff!important}
 .mobile-menu-inner{width:min(calc(100% - 50px),520px);padding-top:60px}
 .mobile-links{display:flex;flex-direction:column}
-.mobile-links a{display:block;color:#f5f5f5!important;text-decoration:none;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:clamp(30px,8vw,48px);font-weight:700;letter-spacing:-.055em;line-height:1.08}
+.mobile-links a{display:block;color:#ffffff!important;text-decoration:none;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:clamp(30px,8vw,48px);font-weight:700;letter-spacing:-.055em;line-height:1.08}
 .mobile-links a:hover,.mobile-links a:focus-visible{color:#ed343b!important;padding-left:8px}
 .mobile-links .mobile-cta{color:#ed343b!important;border:0;margin-top:14px;font-size:21px}
-.nav,.nav.scrolled{background:rgba(8,8,8,.90)!important;color:#f5f5f5!important;border-bottom:1px solid rgba(255,255,255,.12)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-.nav-links,.nav-links a{color:#f5f5f5!important}.logo{color:#f5f5f5!important}.logo span{color:#ed343b!important}
+.nav,.nav.scrolled{background:rgba(8,8,8,.90)!important;color:#ffffff!important;border-bottom:1px solid rgba(255,255,255,.12)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.nav-links,.nav-links a{color:#ffffff!important}.logo{color:#ffffff!important}.logo span{color:#ed343b!important}
 .nav-links a:not(.nav-cta)::after{background:#ed343b!important}.nav-cta{background:#ed343b!important;color:#fff!important;border-radius:3px!important}.nav-cta:hover{background:#c9222a!important;color:#fff!important}
 .menu-toggle{background:#151515!important;border:1px solid rgba(255,255,255,.2)!important}.menu-toggle span{background:#fff!important}.menu-toggle.active{background:#ed343b!important}
 .mobile-menu{background:radial-gradient(circle at 80% 15%,rgba(237,52,59,.18),transparent 34%),rgba(7,7,7,.98)!important}
@@ -315,7 +315,7 @@ body.menu-open{overflow:hidden!important}
   width:100%!important;
   min-height:48px!important;
   padding:12px 2px!important;
-  color:#f5f5f5!important;
+  color:#ffffff!important;
   font-size:clamp(23px,6.5vw,30px)!important;
   line-height:1.2!important;
   letter-spacing:-.045em!important;
@@ -333,7 +333,7 @@ body.menu-open{overflow:hidden!important}
   display:block;
   flex:0 0 auto;
   margin-left:12px;
-  color:#8e8e8e;
+  color:#ffffff;
   font-size:15px;
   transition:color .2s ease,transform .2s ease;
 }
