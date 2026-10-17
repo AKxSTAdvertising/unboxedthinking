@@ -1892,16 +1892,7 @@ Let's Talk →
         </div>
 
 
-        <div class="website-name-list" aria-label="Website projects">
-    <span>Anup Gupta Studio</span>
-    <span>Fortune BTL Advertising</span>
-    <span>Top Human Resource</span>
-    <span>AVNOR Media</span>
-    <span>Excel IT Solution</span>
-    <span>CPLX Media</span>
-</div>
-
-<div class="project-grid">
+        <div class="project-grid">
 
             <article class="project-card reveal">
                 <a class="project-image" href="https://anupguptastudio.com/" target="_blank" rel="noopener noreferrer" aria-label="Open Anup Gupta Studio homepage">
@@ -2839,46 +2830,6 @@ document
 .projects .project-card .case-btn {
     visibility: visible;
     opacity: 1;
-}
-
-
-/* ENSURE ALL SIX WEBSITE NAMES ARE CLEARLY VISIBLE */
-.projects .website-name-list{
-    display:grid !important;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:10px;
-    margin:0 0 28px;
-    position:relative;
-    z-index:5;
-}
-.projects .website-name-list span{
-    display:flex;
-    align-items:center;
-    min-height:54px;
-    padding:14px 16px;
-    background:#fff !important;
-    color:#10131a !important;
-    border:1px solid rgba(20,20,30,.16);
-    font-family:"Manrope",sans-serif;
-    font-size:14px;
-    font-weight:800;
-    line-height:1.35;
-    visibility:visible !important;
-    opacity:1 !important;
-}
-.projects .project-grid{display:grid !important; visibility:visible !important; opacity:1 !important}
-.projects .project-card,
-.projects .project-card .project-content,
-.projects .project-card .project-content h3{
-    display:block;
-    visibility:visible !important;
-    opacity:1 !important;
-    color:#10131a !important;
-}
-.projects .project-card .project-content{display:flex !important; flex-direction:column}
-@media(max-width:700px){
-    .projects .website-name-list{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .projects .website-name-list span{font-size:12px;padding:12px}
 }
 
 </style>
