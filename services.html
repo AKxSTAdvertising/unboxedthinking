@@ -2527,6 +2527,49 @@ document
 .nav-links a.nav-cta.is-current-page::after{content:"";position:absolute;left:0;bottom:-7px;width:100%;height:2px;background:#ed343b}
 .mobile-links a.is-current-page:not(.mobile-cta){color:#ed343b!important;border-bottom-color:#ed343b!important;text-decoration:underline;text-decoration-color:#ed343b;text-decoration-thickness:2px;text-underline-offset:7px}
 .mobile-links a.mobile-cta.is-current-page{box-shadow:inset 0 -2px 0 #fff}
+
+
+/* =====================================================
+   ACCESSIBILITY / CONTRAST PASS — Unboxed Thinking
+   Keep text readable on both light and dark surfaces.
+===================================================== */
+:where(p, li, small, .hero-description, .hero-text, .section-intro,
+       .intro-content, .web-card p, .web-content p, .service-card p,
+       .process-item p, .cta-bottom p, .footer-inner, .feature-row p,
+       .contact-copy, .form-note, .card-description) {
+    color: #465164;
+}
+:where(.marketing, .process, .feature, .work-footer, footer.dark,
+       .dark-section, .mobile-menu) :where(p, li, small, .section-intro,
+       .intro-content, .footer-inner, .feature-row p, .process-head p,
+       .marketing-head p, .marketing-card p, .contact-copy, .form-note) {
+    color: #d0d6e0;
+}
+:where(.marketing, .process, .feature, .work-footer, footer.dark,
+       .dark-section) :where(a:not(.nav-cta):not(.cta-button), .footer-inner a) {
+    color: #f8fafc;
+}
+:where(.nav-links a, .mobile-links a, .logo, button, .cta-button,
+       .nav-cta, .web-button, .service-link, .service-arrow) {
+    text-decoration-thickness: max(1px, .06em);
+}
+:where(a, button, input, textarea, select):focus-visible {
+    outline: 3px solid #7c3aed;
+    outline-offset: 4px;
+}
+::selection {
+    color: #ffffff;
+    background: #6428c7;
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
 </style>
 <script id="current-page-nav-fix-script">
 (function(){
