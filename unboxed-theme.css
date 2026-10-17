@@ -163,3 +163,33 @@ footer{padding-top:22px!important;padding-bottom:22px!important}
  .hero-content,.hero-inner,.page-hero .container{padding-top:95px!important;padding-bottom:35px!important}
  footer{padding-top:18px!important;padding-bottom:18px!important}
 }
+
+/* SITE-WIDE TEXT CONTRAST: make all muted/off-white copy pure bright white */
+body,
+body p,
+body li,
+body small,
+body label,
+body blockquote,
+body figcaption,
+body .muted,
+body .text-muted,
+body .hero-description,
+body .hero-text,
+body .intro-content,
+body .section-intro,
+body .service-card p,
+body .marketing-card p,
+body .web-card p,
+body .process-item p,
+body .feature-row p,
+body main section p,
+body main section li,
+body footer p,
+body footer li,
+body footer small,
+body .footer-bottom,
+body .footer-inner,
+body .footer-links {
+  color: #FFFFFF !important;
+}
