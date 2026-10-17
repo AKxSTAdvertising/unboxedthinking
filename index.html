@@ -1328,6 +1328,7 @@ footer{
 </style>
 <link rel="stylesheet" href="unboxed-theme.css">
   <link rel="stylesheet" href="unboxed-theme.css?v=20261017-theme-fix">
+<link rel="stylesheet" href="site-nav.css?v=20261017-shared-nav-v1">
 </head>
 
 <body>
@@ -2235,95 +2236,6 @@ window.addEventListener("scroll",()=>{
 
 
 /* =====================================================
-   MOBILE MENU
-===================================================== */
-
-const menuToggle = document.getElementById("menuToggle");
-const mobileMenu = document.getElementById("mobileMenu");
-const mobileLinks = document.querySelectorAll(".mobile-links a");
-
-
-function openMenu(){
-
-    menuToggle.classList.add("active");
-
-    mobileMenu.classList.add("active");
-
-    menuToggle.setAttribute("aria-expanded","true");
-
-    document.body.classList.add("menu-open");
-
-}
-
-
-function closeMenu(){
-
-    menuToggle.classList.remove("active");
-
-    mobileMenu.classList.remove("active");
-
-    menuToggle.setAttribute("aria-expanded","false");
-
-    document.body.classList.remove("menu-open");
-
-}
-
-
-menuToggle.addEventListener("click",()=>{
-
-    if(mobileMenu.classList.contains("active")){
-
-        closeMenu();
-
-    }else{
-
-        openMenu();
-
-    }
-
-});
-
-
-/* CLOSE WHEN LINK IS CLICKED */
-
-mobileLinks.forEach(link=>{
-
-    link.addEventListener("click",()=>{
-
-        closeMenu();
-
-    });
-
-});
-
-
-/* CLOSE WHEN CLICKING OUTSIDE MENU CONTENT */
-
-mobileMenu.addEventListener("click",(event)=>{
-
-    if(event.target === mobileMenu){
-
-        closeMenu();
-
-    }
-
-});
-
-
-/* CLOSE WITH ESCAPE */
-
-document.addEventListener("keydown",(event)=>{
-
-    if(event.key === "Escape"){
-
-        closeMenu();
-
-    }
-
-});
-
-
-/* =====================================================
    SCROLL REVEAL
 ===================================================== */
 
@@ -2390,6 +2302,7 @@ document
 
 </script>
 
+<script src="site-nav.js?v=20261017-shared-nav-v1"></script>
 <script src="unboxed-motion.js"></script>
 </body>
 </html>
