@@ -13,7 +13,7 @@
  if(shouldPlayIntro){
   overlay=document.createElement("div");
   overlay.className="ut-intro";
-  overlay.innerHTML='<div class="ut-intro-grid"></div><div class="ut-intro-copy"><div class="ut-kicker">INDEPENDENT THINKING · UNCOMMON OUTCOMES</div><div class="ut-stage"><span class="ut-word first">UNBOXED</span><span class="ut-word second">THINK<span>I</span>NG<span>.</span></span><span class="ut-word combined">UNBOXED THINKING<span>.</span></span></div></div><div class="ut-bottom"><span>— IDEAS WITHOUT A BOX</span><span>THINK DIFFERENTLY</span></div>';
+  overlay.innerHTML='<div class="ut-intro-grid"></div><div class="ut-intro-copy"><div class="ut-kicker">INDEPENDENT THINKING · UNCOMMON OUTCOMES</div><div class="ut-stage"><span class="ut-word first">UNBOXED</span><span class="ut-word second">THINKING<span>.</span></span><span class="ut-word combined"><span class="combined-unboxed">UNBOXED</span> <span class="combined-thinking">THINKING</span><span>.</span></span></div></div><div class="ut-bottom"><span>— IDEAS WITHOUT A BOX</span><span>THINK DIFFERENTLY</span></div>';
   document.body.classList.add("ut-loading");
   document.body.insertBefore(overlay,document.body.firstChild);
  }
