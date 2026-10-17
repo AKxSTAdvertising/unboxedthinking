@@ -65,6 +65,10 @@ footer,.footer,.work-footer{background:#050505!important;color:#ffffff!important
 .ut-intro .ut-word.show{opacity:1;filter:blur(0);transform:translateY(-50%)}
 .ut-intro .ut-word.hide{opacity:0;filter:blur(12px);transform:translateY(calc(-50% - 30px))}
 .ut-intro .ut-word span{color:#ed343b}
+.ut-intro .ut-word.second{color:#ed343b}
+.ut-intro .ut-word.second span{color:#ed343b}
+.ut-intro .ut-word.combined .combined-unboxed{color:#ffffff}
+.ut-intro .ut-word.combined .combined-thinking{color:#ed343b}
 .ut-intro .ut-word.combined{font-size:clamp(27px,7vw,100px);letter-spacing:-.06em}
 .ut-intro .ut-bottom{position:absolute;z-index:2;bottom:25px;left:25px;right:25px;display:flex;justify-content:space-between;gap:12px;color:#888;font:10px "DM Mono",monospace;letter-spacing:2px}
 body.ut-loading{overflow:hidden!important}
