@@ -11,6 +11,11 @@
     if (menu) {
       menu.classList.remove("active", "open");
       menu.setAttribute("aria-hidden", "true");
+      menu.style.removeProperty("display");
+      menu.style.removeProperty("visibility");
+      menu.style.removeProperty("opacity");
+      menu.style.removeProperty("pointer-events");
+      menu.style.removeProperty("z-index");
     }
     if (toggle) {
       toggle.classList.remove("active");
@@ -27,6 +32,12 @@
     menu.classList.add("active");
     menu.classList.remove("open");
     menu.setAttribute("aria-hidden", "false");
+    /* Force the visible state inline as well, overriding legacy page-specific CSS. */
+    menu.style.setProperty("display", "flex", "important");
+    menu.style.setProperty("visibility", "visible", "important");
+    menu.style.setProperty("opacity", "1", "important");
+    menu.style.setProperty("pointer-events", "auto", "important");
+    menu.style.setProperty("z-index", "2147483000", "important");
     if (toggle) {
       toggle.classList.add("active");
       toggle.setAttribute("aria-expanded", "true");
@@ -61,6 +72,10 @@
         .menu-toggle{position:relative!important;z-index:2147483002!important;pointer-events:auto!important}
         #mobileMenu.mobile-menu{position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;max-height:100dvh!important;overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;z-index:2147483000!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:none!important;background:radial-gradient(circle at 80% 12%,rgba(237,52,59,.16),transparent 34%),rgba(7,7,7,.99)!important;padding:calc(82px + env(safe-area-inset-top,0px)) 0 calc(24px + env(safe-area-inset-bottom,0px))!important}
         #mobileMenu.mobile-menu.active{opacity:1!important;visibility:visible!important;pointer-events:auto!important}
+        #menuToggle span{display:block!important;width:19px!important;height:2px!important;min-height:2px!important;background:#fff!important;border-radius:10px!important;opacity:1!important;visibility:visible!important;flex:0 0 2px!important;}
+        #menuToggle{gap:5px!important;align-items:center!important;justify-content:center!important;flex-direction:column!important;}
+        #mobileMenu .mobile-links, #mobileMenu .mobile-nav-links{display:flex!important;flex-direction:column!important;gap:0!important;width:min(calc(100% - 40px),520px)!important;margin:0 auto!important;}
+        #mobileMenu .mobile-links a, #mobileMenu .mobile-nav-links a{display:flex!important;align-items:center!important;justify-content:space-between!important;width:100%!important;min-height:48px!important;padding:12px 2px!important;color:#f5f5f5!important;font-size:clamp(22px,6vw,29px)!important;line-height:1.2!important;font-weight:700!important;text-decoration:none!important;border-bottom:1px solid rgba(255,255,255,.16)!important;background:transparent!important;border-radius:0!important;white-space:normal!important;}
         #mobileMenu .mobile-menu-inner{display:block!important;width:min(calc(100% - 40px),520px)!important;max-width:520px!important;height:auto!important;max-height:none!important;margin:0 auto!important;padding:12px 0 24px!important;overflow:visible!important;flex:none!important}
         #mobileMenu .mobile-menu-label{display:block!important;margin:0 0 14px!important;color:#ed343b!important;font-size:10px!important;letter-spacing:.18em!important}
         #mobileMenu .mobile-links{display:flex!important;flex-direction:column!important;gap:0!important;width:100%!important}
