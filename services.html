@@ -1504,6 +1504,42 @@ footer{
 <link rel="stylesheet" href="unboxed-theme.css">
   <link rel="stylesheet" href="unboxed-theme.css?v=20261017-theme-fix">
 <link rel="stylesheet" href="site-nav.css?v=20261017-shared-nav-v1">
+
+<style id="compact-service-card-fix">
+/* Final compact-card overrides for the two requested Services sections */
+.services .section-head,
+.marketing .section-head{margin-bottom:38px!important}
+.services .service-grid,
+.marketing .marketing-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important}
+.services .service-card{min-height:220px!important;height:auto!important;padding:22px!important;border-radius:18px!important}
+.services .service-card h3{margin-top:30px!important;font-size:23px!important;line-height:1.15!important}
+.services .service-card p{margin-top:9px!important;font-size:13px!important;line-height:1.5!important;padding-bottom:26px!important}
+.services .service-link{right:20px!important;bottom:17px!important;font-size:12px!important}
+.services .service-number,.marketing .marketing-number{font-size:11px!important}
+.marketing .marketing-card{min-height:190px!important;height:auto!important;padding:21px!important;border-radius:18px!important}
+.marketing .marketing-card h3{margin-top:30px!important;font-size:22px!important;line-height:1.15!important}
+.marketing .marketing-card p{margin-top:9px!important;font-size:13px!important;line-height:1.5!important}
+@media(max-width:900px){
+ .services .service-grid,.marketing .marketing-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+ .services .service-card{min-height:220px!important;padding:17px!important;border-radius:15px!important}
+ .services .service-card h3{margin-top:25px!important;font-size:19px!important}
+ .services .service-card p{font-size:12px!important;line-height:1.45!important;padding-bottom:24px!important}
+ .services .service-link{left:17px!important;right:auto!important;bottom:14px!important;font-size:11px!important}
+ .marketing .marketing-card{min-height:180px!important;padding:17px!important;border-radius:15px!important}
+ .marketing .marketing-card h3{margin-top:25px!important;font-size:18px!important}
+ .marketing .marketing-card p{font-size:12px!important;line-height:1.45!important}
+ .services .section-head,.marketing .section-head{margin-bottom:30px!important}
+}
+@media(max-width:480px){
+ .services .service-card{min-height:230px!important;padding:14px!important}
+ .services .service-card h3{font-size:17px!important}
+ .services .service-card p{font-size:11.5px!important}
+ .services .service-link{left:14px!important;bottom:12px!important}
+ .marketing .marketing-card{min-height:190px!important;padding:14px!important}
+ .marketing .marketing-card h3{font-size:17px!important}
+ .marketing .marketing-card p{font-size:11.5px!important}
+}
+</style>
 </head>
 
 
