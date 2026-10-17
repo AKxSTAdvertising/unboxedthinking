@@ -132,3 +132,45 @@ body.about-page .mobile-menu { display:none; }
   }
   body.about-page .mobile-menu a:last-child { color:#ed343b!important; border-bottom:0; }
 }
+
+/* Header/footer structural styles (About page has no inline layout CSS) */
+body.about-page .nav {
+  position:fixed; top:0; left:0; right:0; width:100%; padding:20px 0;
+  z-index:1000; transition:background .25s ease,padding .25s ease;
+}
+body.about-page .nav.scrolled { padding:13px 0; }
+body.about-page .nav-inner {
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+}
+body.about-page .brand {
+  display:inline-block; flex:0 0 auto; color:#f5f5f5!important;
+  font-size:22px; font-weight:800; letter-spacing:-.06em; white-space:nowrap;
+}
+body.about-page .brand span { color:#ed343b!important; }
+body.about-page .nav-links {
+  display:flex; align-items:center; justify-content:flex-end; gap:clamp(14px,2vw,28px);
+  margin-left:auto; font-size:13px; font-weight:600; white-space:nowrap;
+}
+body.about-page .nav-links a:not(.btn) { position:relative; padding:8px 0; color:#f5f5f5!important; }
+body.about-page .nav-links a[aria-current="page"] { color:#ed343b!important; }
+body.about-page .nav-links a:not(.btn):after {
+  content:""; position:absolute; left:0; right:100%; bottom:0; height:1px;
+  background:#ed343b; transition:right .25s ease;
+}
+body.about-page .nav-links a:not(.btn):hover:after,
+body.about-page .nav-links a[aria-current="page"]:after { right:0; }
+body.about-page .nav-links .btn.red { margin:0; padding:12px 16px; }
+body.about-page .footer .container { width:min(calc(100% - 88px),1240px); }
+body.about-page .footer-top > div:first-child { max-width:430px; }
+body.about-page .footer-links a { color:#b5b5b5!important; font-size:13px; }
+body.about-page .footer-links a:hover { color:#ed343b!important; }
+@media (max-width:1100px) {
+  body.about-page .nav-links { gap:14px; font-size:12px; }
+  body.about-page .brand { font-size:19px; }
+}
+@media (max-width:900px) {
+  body.about-page .nav { padding:14px 0; }
+  body.about-page .nav-links { display:none!important; }
+  body.about-page .menu-btn { display:flex!important; }
+  body.about-page .footer .container { width:calc(100% - 38px); }
+}
