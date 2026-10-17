@@ -24,7 +24,7 @@
   host.className="ut-warp-layer";host.setAttribute("aria-hidden","true");
   var canvas=document.createElement("canvas");host.appendChild(canvas);container.insertBefore(host,container.firstChild);
   canvas.style.filter="hue-rotate("+options.hue+"deg) saturate("+options.saturation+") brightness("+options.brightness+")";
-  var scene=new THREE.Scene();scene.background=new THREE.Color(0x020204);scene.fog=new THREE.FogExp2(0x020204,0.001);
+  var scene=new THREE.Scene();scene.background=new THREE.Color(132106);scene.fog=new THREE.FogExp2(132106,0.001);
   var camera=new THREE.PerspectiveCamera(options.fov,1,0.1,2000);camera.position.z=0;
   var renderer;
   try{renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:true,powerPreference:"high-performance"});}
@@ -32,7 +32,7 @@
   renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
   var group=new THREE.Group();scene.add(group);
   var count=400,positions=new Float32Array(count*6),colors=new Float32Array(count*6);
-  var palette=[0x10b9ff,0x0590cd,0x34a9d9,0xffffff,0xed343b].map(function(hex){return new THREE.Color(hex);});
+  var palette=[1096065,366185,3462041,16777215].map(function(hex){return new THREE.Color(hex);});
   for(var i=0;i<count;i++){
    var angle=Math.random()*Math.PI*2,radius=Math.random()*800+20,x=Math.cos(angle)*radius,y=Math.sin(angle)*radius,z=(Math.random()-.5)*2000,length=Math.random()*150+50,c=palette[Math.floor(Math.random()*palette.length)];
    positions[i*6]=x;positions[i*6+1]=y;positions[i*6+2]=z;positions[i*6+3]=x;positions[i*6+4]=y;positions[i*6+5]=z+length;
@@ -43,7 +43,7 @@
   group.add(new THREE.LineSegments(geometry,lineMaterial));
   var tileGeometry=new THREE.PlaneGeometry(8,20),tiles=[];
   for(var j=0;j<40;j++){
-   var material=new THREE.MeshBasicMaterial({color:[0xa7a7a7,0xd1d1d1,0xffffff,0xed343b][Math.floor(Math.random()*4)],transparent:true,opacity:options.tileOpacity,side:THREE.DoubleSide});
+   var material=new THREE.MeshBasicMaterial({color:(Math.random()>0.6?11006928:(Math.random()>0.5?13761253:16777215)),transparent:true,opacity:options.tileOpacity,side:THREE.DoubleSide});
    var tile=new THREE.Mesh(tileGeometry,material),a=Math.random()*Math.PI*2,r=Math.random()*400+100;
    tile.position.set(Math.cos(a)*r,Math.sin(a)*r,(Math.random()-.5)*2000);tile.lookAt(0,0,tile.position.z+100);
    var scale=Math.random()*1.5+.5;tile.scale.set(scale,scale,scale);group.add(tile);tiles.push(tile);
