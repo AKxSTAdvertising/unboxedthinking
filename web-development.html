@@ -2782,7 +2782,12 @@ document
        .dark-section, .mobile-menu) :where(p, li, small, .section-intro,
        .intro-content, .footer-inner, .feature-row p, .process-head p,
        .marketing-head p, .marketing-card p, .contact-copy, .form-note) {
-    color: #d0d6e0;
+    color: #ffffff !important;
+}
+/* Keep copy on white case-study surfaces crisp and readable */
+.case-study-section .case-study-right p,
+.case-study-section .case-column li {
+    color: #17151f !important;
 }
 :where(.marketing, .process, .feature, .work-footer, footer.dark,
        .dark-section) :where(a:not(.nav-cta):not(.cta-button), .footer-inner a) {
