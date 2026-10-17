@@ -607,18 +607,18 @@ button{
 .service-grid{
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(3,minmax(0,1fr));
 
     gap:16px;
 }
 
 .service-card{
 
-    min-height:390px;
+    min-height:300px;
 
-    padding:40px;
+    padding:30px;
 
-    border-radius:30px;
+    border-radius:25px;
 
     border:1px solid var(--border);
 
@@ -692,22 +692,22 @@ button{
 
 .service-card h3{
 
-    margin-top:90px;
+    margin-top:54px;
 
-    font-size:38px;
+    font-size:28px;
 
     letter-spacing:-.055em;
 }
 
 .service-card p{
 
-    margin-top:17px;
+    margin-top:12px;
 
     max-width:590px;
 
     color:#687386;
 
-    font-size:17px;
+    font-size:15px;
 
     line-height:1.7;
 }
@@ -720,8 +720,8 @@ button{
 
     position:absolute;
 
-    right:40px;
-    bottom:38px;
+    right:28px;
+    bottom:26px;
 
     font-size:14px;
 
@@ -823,9 +823,9 @@ button{
 
 .marketing-card{
 
-    min-height:300px;
+    min-height:255px;
 
-    padding:32px;
+    padding:27px;
 
     border-radius:25px;
 
@@ -859,20 +859,20 @@ button{
 
 .marketing-card h3{
 
-    margin-top:72px;
+    margin-top:48px;
 
-    font-size:28px;
+    font-size:25px;
 
     letter-spacing:-.045em;
 }
 
 .marketing-card p{
 
-    margin-top:15px;
+    margin-top:11px;
 
     color:#929dad;
 
-    font-size:16px;
+    font-size:14px;
 
     line-height:1.65;
 }
@@ -1293,29 +1293,34 @@ footer{
     /* SERVICES */
 
     .service-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:12px;
     }
 
     .service-card{
-        min-height:340px;
-        padding:30px;
-        border-radius:24px;
+        min-height:320px;
+        padding:22px 18px;
+        border-radius:20px;
     }
 
     .service-card h3{
-        margin-top:65px;
-        font-size:32px;
+        margin-top:42px;
+        font-size:clamp(19px,3.2vw,25px);
+        line-height:1.12;
     }
 
     .service-card p{
-        font-size:15.5px;
-        line-height:1.65;
+        font-size:13px;
+        line-height:1.55;
+        margin-top:10px;
+        padding-bottom:30px;
     }
 
     .service-link{
-        left:30px;
+        left:18px;
         right:auto;
-        bottom:28px;
+        bottom:18px;
+        font-size:12px;
     }
 
     /* PROCESS */
@@ -1338,11 +1343,26 @@ footer{
     /* MARKETING */
 
     .marketing-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:12px;
     }
 
     .marketing-card{
-        min-height:260px;
+        min-height:235px;
+        padding:21px 17px;
+        border-radius:19px;
+    }
+
+    .marketing-card h3{
+        margin-top:42px;
+        font-size:clamp(18px,3.1vw,23px);
+        line-height:1.15;
+    }
+
+    .marketing-card p{
+        font-size:13px;
+        line-height:1.55;
+        margin-top:10px;
     }
 
     /* WEB */
@@ -1444,7 +1464,33 @@ footer{
     }
 
     .service-card{
-        min-height:355px;
+        min-height:335px;
+        padding:20px 15px;
+    }
+
+    .service-card h3{
+        font-size:19px;
+    }
+
+    .service-card p{
+        font-size:12.5px;
+    }
+
+    .service-link{
+        left:15px;
+    }
+
+    .marketing-card{
+        min-height:245px;
+        padding:19px 15px;
+    }
+
+    .marketing-card h3{
+        font-size:18px;
+    }
+
+    .marketing-card p{
+        font-size:12.5px;
     }
 
     .web-code{
