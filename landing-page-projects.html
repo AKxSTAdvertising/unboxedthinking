@@ -84,13 +84,33 @@ body.modal-open{overflow:hidden}
 @media(max-width:370px){.collection-grid{grid-template-columns:1fr}.collection-image{height:155px}.collection-body p{min-height:0}.collection-body h2{font-size:18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.collection-card,.collection-image img{transition:none!important;transform:none!important}*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
 </style>
+
+<style id="headline-color-policy">
+/* Headline palette: red on light surfaces, white on dark surfaces. */
+:where(h1,h2,h3,h4,h5,h6),
+:where(h1,h2,h3,h4,h5,h6) :where(span,strong,em,b,i) {
+  color: #ed343b !important;
+}
+:where(.mobile-menu,.dark-section,.case-study-section,.work-footer,
+       .footer-dark,.process.dark,.marketing.dark,footer.dark,
+       .collection-entry,.collection-main,.collection-hero,
+       .project-dark,.contact-dark) :where(h1,h2,h3,h4,h5,h6),
+:where(.mobile-menu,.dark-section,.case-study-section,.work-footer,
+       .footer-dark,.process.dark,.marketing.dark,footer.dark,
+       .collection-entry,.collection-main,.collection-hero,
+       .project-dark,.contact-dark) :where(h1,h2,h3,h4,h5,h6)
+       :where(span,strong,em,b,i) {
+  color: #ffffff !important;
+}
+</style>
+
 </head>
 <body>
 <header class="nav" id="nav">
   <div class="container nav-inner">
     <a href="index.html" class="logo">UNBOXED <span>THINKING.</span></a>
     <nav class="nav-links" aria-label="Main navigation">
-      <a href="index.html">Home</a><a href="services.html">Services</a><a href="web-development.html">Web Development</a><a href="work.html">Work</a><a href="contact.html" class="nav-cta">Let's Talk</a>
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="web-development.html">Web Development</a><a href="contact.html" class="nav-cta">Let's Talk</a>
     </nav>
     <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
   </div>
@@ -99,7 +119,7 @@ body.modal-open{overflow:hidden}
   <div class="mobile-menu-inner">
     <div class="mobile-menu-label">Unboxed Thinking / MENU</div>
     <nav class="mobile-links" aria-label="Mobile navigation">
-      <a href="index.html">Home</a><a href="services.html">Services</a><a href="web-development.html">Web Development</a><a href="work.html">Work</a><a href="contact.html" class="mobile-cta">Let's Talk →</a>
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="web-development.html">Web Development</a><a href="contact.html" class="mobile-cta">Let's Talk →</a>
     </nav>
   </div>
 </div>
