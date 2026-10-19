@@ -1377,6 +1377,26 @@ footer{
 <link rel="stylesheet" href="unboxed-theme.css?v=20261017-bright-white-v1">
   <link rel="stylesheet" href="unboxed-theme.css?v=20261017-bright-white-v1">
 <link rel="stylesheet" href="site-nav.css?v=20261017-bright-white-v1">
+
+<style id="headline-color-policy">
+/* Headline palette: red on light surfaces, white on dark surfaces. */
+:where(h1,h2,h3,h4,h5,h6),
+:where(h1,h2,h3,h4,h5,h6) :where(span,strong,em,b,i) {
+  color: #ed343b !important;
+}
+:where(.mobile-menu,.dark-section,.case-study-section,.work-footer,
+       .footer-dark,.process.dark,.marketing.dark,footer.dark,
+       .collection-entry,.collection-main,.collection-hero,
+       .project-dark,.contact-dark) :where(h1,h2,h3,h4,h5,h6),
+:where(.mobile-menu,.dark-section,.case-study-section,.work-footer,
+       .footer-dark,.process.dark,.marketing.dark,footer.dark,
+       .collection-entry,.collection-main,.collection-hero,
+       .project-dark,.contact-dark) :where(h1,h2,h3,h4,h5,h6)
+       :where(span,strong,em,b,i) {
+  color: #ffffff !important;
+}
+</style>
+
 </head>
 
 
@@ -1406,7 +1426,7 @@ UNBOXED <span>THINKING.</span>
 
 <a href="web-development.html">Web Development</a>
 
-<a href="work.html">Work</a>
+
 
 <a href="contact.html" class="nav-cta">
 Let's Talk
@@ -1463,9 +1483,7 @@ Services
 Web Development
 </a>
 
-<a href="work.html">
-Work
-</a>
+
 
 <a href="contact.html" class="mobile-cta">
 Let's Talk →
