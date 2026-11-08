@@ -92,3 +92,83 @@
  }
  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",loadThree,{once:true});else loadThree();
 })();
+
+/* =========================================================
+   UNBOXED THINKING — UT LOGO CURSOR
+   Injected once by the shared motion file on every page.
+========================================================= */
+(function(){
+  "use strict";
+  if (!window.matchMedia || !window.matchMedia("(pointer:fine)").matches) return;
+  if (document.querySelector(".ut-logo-cursor")) return;
+
+  var trails = [];
+  var trailCount = 3;
+  function makeMark(className){
+    var mark = document.createElement("div");
+    mark.className = className;
+    mark.setAttribute("aria-hidden","true");
+    mark.innerHTML = '<span class="ut-cursor-u">U</span><span class="ut-cursor-t">T</span>';
+    document.body.appendChild(mark);
+    return mark;
+  }
+
+  var cursor = makeMark("ut-logo-cursor");
+  for (var i=0; i<trailCount; i++) {
+    var node = makeMark("ut-logo-cursor-trail");
+    node.style.setProperty("--trail-opacity", String(.22 - i*.055));
+    trails.push({el:node,x:window.innerWidth/2,y:window.innerHeight/2});
+  }
+
+  var x=window.innerWidth/2, y=window.innerHeight/2;
+  var currentX=x, currentY=y;
+  var active=false, raf=0;
+  var speed=.19;
+
+  function onMove(e){
+    x=e.clientX; y=e.clientY;
+    if(!active){active=true;document.body.classList.add("ut-cursor-ready");}
+  }
+  window.addEventListener("mousemove",onMove,{passive:true});
+
+  function animate(){
+    currentX += (x-currentX)*speed;
+    currentY += (y-currentY)*speed;
+    cursor.style.left=currentX+"px";
+    cursor.style.top=currentY+"px";
+
+    var followX=currentX, followY=currentY;
+    trails.forEach(function(item,index){
+      item.x += (followX-item.x)*(.12-index*.018);
+      item.y += (followY-item.y)*(.12-index*.018);
+      item.el.style.left=item.x+"px";
+      item.el.style.top=item.y+"px";
+      followX=item.x; followY=item.y;
+    });
+    raf=requestAnimationFrame(animate);
+  }
+  animate();
+
+  document.addEventListener("pointerover",function(e){
+    if(e.target && e.target.closest("a,button,[role='button'],input,textarea,select,summary")){
+      document.body.classList.add("ut-cursor-hover");
+    }
+  });
+  document.addEventListener("pointerout",function(e){
+    if(e.target && e.target.closest("a,button,[role='button'],input,textarea,select,summary")){
+      document.body.classList.remove("ut-cursor-hover");
+    }
+  });
+  document.addEventListener("mouseleave",function(){
+    document.body.classList.remove("ut-cursor-ready");
+  });
+  document.addEventListener("mouseenter",function(){
+    if(active) document.body.classList.add("ut-cursor-ready");
+  });
+  window.addEventListener("blur",function(){
+    document.body.classList.remove("ut-cursor-ready");
+  });
+  window.addEventListener("focus",function(){
+    if(active) document.body.classList.add("ut-cursor-ready");
+  });
+})();
