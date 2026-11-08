@@ -197,3 +197,50 @@ body .footer-inner,
 body .footer-links {
   color: #FFFFFF !important;
 }
+
+
+/* =========================================================
+   UNBOXED THINKING — UT MONOGRAM CURSOR
+   Shared site-wide cursor. No circle, ring or dot cursor.
+========================================================= */
+@media (pointer:fine) {
+  html, body, body a, body button, body input, body textarea, body select,
+  body [role="button"], body summary {
+    cursor: none !important;
+  }
+  .ut-logo-cursor,
+  .ut-logo-cursor-trail {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    z-index: 2147483000 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    height: 22px;
+    pointer-events: none !important;
+    user-select: none !important;
+    white-space: nowrap;
+    font-family: "Manrope", sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    letter-spacing: -3px !important;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    will-change: left, top, opacity, transform;
+  }
+  .ut-logo-cursor { transition: opacity .18s ease, transform .22s ease; }
+  .ut-logo-cursor .ut-cursor-u,
+  .ut-logo-cursor-trail .ut-cursor-u { color: #fff !important; }
+  .ut-logo-cursor .ut-cursor-t,
+  .ut-logo-cursor-trail .ut-cursor-t { color: #ed343b !important; margin-left: 1px; }
+  body.ut-cursor-ready .ut-logo-cursor { opacity: 1; }
+  body.ut-cursor-hover .ut-logo-cursor { transform: translate(-50%, -50%) scale(1.35); }
+  .ut-logo-cursor-trail { z-index: 2147482998 !important; opacity: 0; font-size: 11px !important; height: 17px; }
+  body.ut-cursor-ready .ut-logo-cursor-trail { opacity: var(--trail-opacity, .15); }
+}
+@media (pointer:coarse), (prefers-reduced-motion:reduce) {
+  .ut-logo-cursor, .ut-logo-cursor-trail { display:none !important; }
+}
