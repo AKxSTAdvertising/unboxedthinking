@@ -200,8 +200,7 @@ body .footer-links {
 
 
 /* =========================================================
-   UNBOXED THINKING — UT MONOGRAM CURSOR
-   Shared site-wide cursor. No circle, ring or dot cursor.
+   UNBOXED THINKING — CIRCULAR UT MONOGRAM CURSOR
 ========================================================= */
 @media (pointer:fine) {
   html, body, body a, body button, body input, body textarea, body select,
@@ -217,28 +216,46 @@ body .footer-links {
     display: flex !important;
     align-items: center;
     justify-content: center;
-    width: max-content;
-    height: 22px;
+    width: 58px !important;
+    height: 58px !important;
+    box-sizing: border-box !important;
+    border: 1px solid rgba(255,255,255,.58) !important;
+    border-radius: 50% !important;
+    background: rgba(16,16,18,.88) !important;
+    box-shadow: 0 0 0 5px rgba(237,52,59,.10), 0 8px 28px rgba(0,0,0,.32);
     pointer-events: none !important;
     user-select: none !important;
     white-space: nowrap;
     font-family: "Manrope", sans-serif !important;
-    font-size: 15px !important;
+    font-size: 25px !important;
     font-weight: 900 !important;
     line-height: 1 !important;
-    letter-spacing: -3px !important;
+    letter-spacing: -4px !important;
     transform: translate(-50%, -50%);
     opacity: 0;
     will-change: left, top, opacity, transform;
   }
-  .ut-logo-cursor { transition: opacity .18s ease, transform .22s ease; }
+  .ut-logo-cursor { transition: opacity .18s ease, transform .22s ease, box-shadow .22s ease; }
   .ut-logo-cursor .ut-cursor-u,
   .ut-logo-cursor-trail .ut-cursor-u { color: #fff !important; }
   .ut-logo-cursor .ut-cursor-t,
-  .ut-logo-cursor-trail .ut-cursor-t { color: #ed343b !important; margin-left: 1px; }
+  .ut-logo-cursor-trail .ut-cursor-t { color: #ed343b !important; margin-left: 2px; }
   body.ut-cursor-ready .ut-logo-cursor { opacity: 1; }
-  body.ut-cursor-hover .ut-logo-cursor { transform: translate(-50%, -50%) scale(1.35); }
-  .ut-logo-cursor-trail { z-index: 2147482998 !important; opacity: 0; font-size: 11px !important; height: 17px; }
+  body.ut-cursor-hover .ut-logo-cursor {
+    transform: translate(-50%, -50%) scale(1.16);
+    box-shadow: 0 0 0 7px rgba(237,52,59,.16), 0 10px 32px rgba(0,0,0,.4);
+  }
+  .ut-logo-cursor-trail {
+    z-index: 2147482998 !important;
+    width: 34px !important;
+    height: 34px !important;
+    border-color: rgba(255,255,255,.22) !important;
+    background: rgba(16,16,18,.62) !important;
+    box-shadow: none !important;
+    opacity: 0;
+    font-size: 15px !important;
+    letter-spacing: -2px !important;
+  }
   body.ut-cursor-ready .ut-logo-cursor-trail { opacity: var(--trail-opacity, .15); }
 }
 @media (pointer:coarse), (prefers-reduced-motion:reduce) {
