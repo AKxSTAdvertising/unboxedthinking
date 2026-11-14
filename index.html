@@ -722,12 +722,11 @@ function $(s){return document.querySelector(s)}function $$(s){return Array.proto
 function clamp(v,a,b){return Math.min(b,Math.max(a,v))}
 
 
-/* ===== opening: the box opens (home only, once per visit) ===== */
+/* ===== opening: replay the box intro on every page load ===== */
 (function(){
   var L=document.getElementById("loader");if(!L)return;
-  var html=document.documentElement,seen=false;
-  try{seen=sessionStorage.getItem("ut_seen2")==="1";sessionStorage.setItem("ut_seen2","1")}catch(e){}
-  if(reduce||seen){L.classList.add("gone");return;}
+  var html=document.documentElement;
+  if(reduce){L.classList.add("gone");return;}
   html.classList.add("loading");try{history.scrollRestoration="manual"}catch(e){}scrollTo(0,0);
   var k=0;L.querySelectorAll(".ld-word span").forEach(function(w){var t=w.textContent;w.textContent="";t.split("").forEach(function(c){var s=document.createElement("span");s.className="lt";s.style.setProperty("--i",k++);s.textContent=c;w.appendChild(s)})});
   var pct=document.getElementById("ldPct"),t0=performance.now(),D=2700;
